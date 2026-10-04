@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nuit Blanche — ton Mac ne dort plus, même capot fermé</title>
+<meta name="description" content="Nuit Blanche garde ton Mac éveillé d'un seul bouton, même capot fermé. Tes agents IA, téléchargements, rendus et synchros continuent. Et il reste en ligne sur le partage de connexion de ton iPhone. Gratuit, pour Mac.">
+<meta name="theme-color" content="#cfeefc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b2b5e" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<link rel="canonical" href="https://connected-mate.github.io/nuit-blanche/">
+<link rel="alternate" hreflang="fr" href="https://connected-mate.github.io/nuit-blanche/">
+<link rel="alternate" hreflang="en" href="https://connected-mate.github.io/nuit-blanche/en/">
+<link rel="alternate" hreflang="x-default" href="https://connected-mate.github.io/nuit-blanche/">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nuit Blanche">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://connected-mate.github.io/nuit-blanche/">
+<meta property="og:title" content="Nuit Blanche — ton Mac ne dort plus, même capot fermé">
+<meta property="og:description" content="Un seul bouton : ton Mac reste éveillé et en ligne. Ferme le capot, va dormir, tout continue. Gratuit, pour Mac.">
+<meta property="og:image" content="https://connected-mate.github.io/nuit-blanche/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Un ciel étoilé peint, et la phrase « Ton Mac ne dort plus. Toi, si. »">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nuit Blanche — ton Mac ne dort plus, même capot fermé">
+<meta name="twitter:description" content="Un seul bouton : ton Mac reste éveillé et en ligne. Ferme le capot, tout continue. Gratuit, pour Mac.">
+<meta name="twitter:image" content="https://connected-mate.github.io/nuit-blanche/assets/og.jpg">
+
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>
+document.documentElement.classList.replace('no-js', 'js');
+/* Première visite depuis une machine qui n'est pas en français : on propose l'anglais.
+   Un choix explicite est mémorisé et l'emporte toujours ensuite. */
+try {
+  var nbLang = localStorage.getItem('nuitblanche-lang');
+  if (!nbLang && !/^fr/i.test(navigator.language || '')) {
+    localStorage.setItem('nuitblanche-lang', 'en');
+    nbLang = 'en';
+  }
+  if (nbLang === 'en') location.replace('en/' + location.hash);
+} catch (e) {}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Nuit Blanche",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "macOS 14 ou plus récent",
+  "description": "Garde ton Mac éveillé d'un seul bouton, même capot fermé, et connecté au partage de connexion de ton iPhone.",
+  "url": "https://connected-mate.github.io/nuit-blanche/",
+  "downloadUrl": "https://github.com/Connected-Mate/nuit-blanche/releases/latest/download/NuitBlanche.dmg",
+  "image": "https://connected-mate.github.io/nuit-blanche/assets/og.jpg",
+  "inLanguage": ["fr", "en"],
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "publisher": { "@type": "Organization", "name": "Connected Mate" }
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#contenu">Aller au contenu</a>
+<div class="dawn" aria-hidden="true"></div>
+
+<header class="wrap top">
+  <a class="mark" href="./" aria-label="Nuit Blanche, accueil">
+    <img src="assets/icon.svg" alt="" width="30" height="30">
+    <span>Nuit Blanche</span>
+  </a>
+  <p class="langs">
+    <span aria-current="true">FR</span>
+    <a href="en/" data-lang="en" hreflang="en" lang="en" aria-label="English version">EN</a>
+  </p>
+</header>
+
+<main id="contenu">
+
+<!-- ————————————————————————————— hero -->
+<section class="wrap hero" aria-labelledby="titre">
+  <p class="badge">Gratuit · notarisée par Apple</p>
+
+  <h1 class="display" id="titre">Ton Mac ne dort plus. <span>Toi, si.</span></h1>
+
+  <p class="lede">Un seul bouton, et ton Mac reste éveillé, même capot fermé. Tes agents IA, tes téléchargements, tes rendus et tes synchros continuent pendant que tu t'en vas.</p>
+
+  <div class="cta__wrap">
+    <div class="cta">
+      <a class="btn btn--go btn--lg" data-download href="https://github.com/Connected-Mate/nuit-blanche/releases/latest/download/NuitBlanche.dmg">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+        <span data-download-label>Télécharger pour Mac</span>
+      </a>
+      <a class="btn btn--ghost btn--lg" href="#fonctions">Comment ça marche</a>
+      <span class="note note--hero" aria-hidden="true">
+        un clic,<br>c'est tout&nbsp;!
+        <svg viewBox="0 0 80 40" width="64" height="32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4C14 24 40 32 70 24"/><path d="M59 17l11 7-10 7"/></svg>
+      </span>
+    </div>
+    <p class="fine">
+      <span>macOS 14 ou plus récent</span>
+      <span>Apple Silicon et Intel</span>
+    </p>
+    <p class="fine" data-download-note hidden></p>
+  </div>
+
+  <!-- maquette de l'app sur un ciel étoilé peint -->
+  <div class="stage" id="demo">
+    <picture class="stage__sky">
+      <source type="image/avif" srcset="assets/sky-800.avif 800w, assets/sky-1536.avif 1536w" sizes="(max-width: 1260px) 100vw, 1200px">
+      <img src="assets/sky-1536.jpg" srcset="assets/sky-800.jpg 800w, assets/sky-1536.jpg 1536w" sizes="(max-width: 1260px) 100vw, 1200px" width="1536" height="1024" alt="Un ciel de nuit peint, aux étoiles tourbillonnantes, au-dessus d'un village endormi." fetchpriority="high" decoding="async">
+    </picture>
+
+    <div class="menubar" aria-hidden="true">
+      <span class="menubar__item menubar__moon">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/></svg>
+      </span>
+      <span class="menubar__item">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4 9.5h3v5H4zM9.2 7.5h3v9h-3zM14.4 5.5h3v13h-3z"/></svg>
+        5G
+      </span>
+      <span class="menubar__item menubar__clock">ven. 03:12</span>
+    </div>
+
+    <div class="window" role="group" aria-label="Aperçu de la fenêtre Nuit Blanche">
+      <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="power">
+        <span class="power__moon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/></svg>
+        </span>
+        <div class="power__text">
+          <p class="power__name">Nuit Blanche</p>
+          <p class="power__state" data-state-on="Ton Mac reste éveillé" data-state-off="Ton Mac pourra dormir" aria-live="polite">Ton Mac reste éveillé</p>
+        </div>
+        <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Nuit Blanche, démonstration" disabled data-power></button>
+      </div>
+      <ul class="rows">
+        <li><span>Même capot fermé</span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span></li>
+        <li><span>Partage de connexion forcé<small>Mon iPhone · connecté</small></span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span></li>
+        <li><span>Sécurité batterie</span><span class="val">S'arrête sous 20&nbsp;%</span></li>
+        <li><span>Durée</span><span class="val">Jusqu'à demain 8&nbsp;h</span></li>
+      </ul>
+    </div>
+
+    <p class="stage__hint" aria-hidden="true">Essaie l'interrupteur</p>
+  </div>
+</section>
+
+<!-- ————————————————————————————— fonctions -->
+<section class="wrap section" id="fonctions" aria-labelledby="fonctions-titre">
+  <p class="kicker">Ce que fait Nuit Blanche</p>
+  <h2 class="h2" id="fonctions-titre">Ferme le capot. Va dormir. Tout continue.</h2>
+
+  <div class="feats">
+    <article class="feat">
+      <p class="note" aria-hidden="true">même capot fermé&nbsp;!</p>
+      <h3>Ton Mac reste éveillé, ouvert ou fermé.</h3>
+      <p>Normalement, un Mac portable s'endort dès qu'on rabat l'écran. Avec Nuit Blanche allumé, il continue de travailler, que tu le laisses sur le bureau ou que tu partes avec, capot fermé.</p>
+    </article>
+
+    <article class="feat">
+      <p class="note" aria-hidden="true">toujours en ligne</p>
+      <h3>Ton iPhone devient sa connexion.</h3>
+      <p>Choisis ton iPhone une fois. Dès que son partage de connexion est à portée, ton Mac s'y reconnecte tout seul, et le reste. Dans le train, au café, au fond du jardin&nbsp;: il ne décroche plus.</p>
+    </article>
+
+    <article class="feat">
+      <p class="note" aria-hidden="true">on veille sur toi</p>
+      <h3>Il sait s'arrêter tout seul.</h3>
+      <p>Quand la batterie descend sous le seuil que tu as choisi, Nuit Blanche s'éteint et laisse ton Mac se reposer. Tu peux aussi fixer une durée&nbsp;: il s'arrête à l'heure dite.</p>
+    </article>
+
+    <article class="feat">
+      <p class="note" aria-hidden="true">un clic, là-haut</p>
+      <h3>Toujours à portée, dans la barre des menus.</h3>
+      <p>Une petite lune en haut de l'écran. Pleine quand ton Mac veille, discrète sinon. Un clic pour allumer, un clic pour éteindre&nbsp;: pas de réglage caché, pas de jargon.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ————————————————————————————— ce qui continue -->
+<section class="wrap section" aria-labelledby="jobs-titre">
+  <div class="jobs">
+    <div>
+      <p class="kicker">Pendant que tu dors</p>
+      <h2 class="h2" id="jobs-titre">Ce qui ne s'arrête plus en route</h2>
+      <p class="intro">Tout ce qui s'interrompait quand ton Mac s'endormait va maintenant jusqu'au bout.</p>
+    </div>
+    <ul class="jobs__list">
+      <li>
+        <span class="jobs__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <b>Tes agents IA</b>
+        <span>Claude, Codex et les autres continuent leur tâche toute la nuit, sans que la connexion saute au milieu.</span>
+      </li>
+      <li>
+        <span class="jobs__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span>
+        <b>Les gros téléchargements</b>
+        <span>Un jeu, une mise à jour, une vidéo de plusieurs gigas&nbsp;: lance, ferme, retrouve-le fini.</span>
+      </li>
+      <li>
+        <span class="jobs__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4-2.5-4-2.5Z"/></svg></span>
+        <b>Les rendus et exports</b>
+        <span>Montage vidéo, 3D, musique&nbsp;: l'export tourne pendant que tu fais autre chose.</span>
+      </li>
+      <li>
+        <span class="jobs__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.7-7.9A5.5 5.5 0 0 1 17 9a3.5 3.5 0 0 1 .5 7H7Z"/><path d="M12 12v5M10 15l2 2 2-2"/></svg></span>
+        <b>Les sauvegardes et synchros</b>
+        <span>iCloud, Dropbox, Time Machine&nbsp;: elles vont au bout, au lieu de reprendre à zéro le lendemain.</span>
+      </li>
+      <li>
+        <span class="jobs__ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>
+        <b>Les longues compilations</b>
+        <span>Pour celles et ceux qui codent&nbsp;: la compilation et les tests se finissent sans toi.</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ————————————————————————————— questions -->
+<section class="wrap section" id="questions" aria-labelledby="questions-titre">
+  <div class="faq">
+    <div>
+      <p class="kicker">Questions</p>
+      <h2 class="h2" id="questions-titre">Tes questions, nos réponses</h2>
+    </div>
+
+    <div class="qa-list">
+      <details class="qa">
+        <summary>Est-ce que c'est sans danger pour mon Mac&nbsp;?</summary>
+        <div class="qa__body">
+          <p>Oui. Nuit Blanche ne fait qu'une chose&nbsp;: dire à ton Mac de ne pas s'endormir tant qu'il est allumé. Dès que tu l'éteins, ou que tu quittes l'app, ton Mac retrouve exactement ses réglages habituels.</p>
+          <p>L'app est notarisée par Apple&nbsp;: Apple l'a vérifiée avant que tu puisses l'ouvrir.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Et la chaleur, capot fermé&nbsp;?</summary>
+        <div class="qa__body">
+          <p>Capot fermé, ton Mac travaille comme d'habitude, il a donc besoin de respirer. Pose-le sur une surface dure plutôt que sur un lit ou un canapé, et <strong>ne le range pas dans un sac ou une housse pendant qu'il tourne</strong>.</p>
+          <p>Si tu dois le glisser dans ton sac, éteins d'abord Nuit Blanche d'un clic.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Va-t-il vider ma batterie&nbsp;?</summary>
+        <div class="qa__body">
+          <p>Un Mac éveillé consomme plus qu'un Mac endormi, c'est normal. C'est pour ça que Nuit Blanche surveille la batterie&nbsp;: sous le seuil que tu choisis, il s'arrête et laisse ton Mac s'endormir. Branché sur secteur, tu n'as pas à t'en soucier.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Le partage de connexion utilise-t-il mon forfait&nbsp;?</summary>
+        <div class="qa__body">
+          <p>Oui&nbsp;: quand ton Mac passe par ton iPhone, il consomme les données de ton forfait mobile, comme n'importe quel partage de connexion. Nuit Blanche ne s'y connecte que si tu l'as choisi, et tu peux couper l'option à tout moment.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Pourquoi l'app demande-t-elle une autorisation au premier lancement&nbsp;?</summary>
+        <div class="qa__body">
+          <p>Empêcher la mise en veille capot fermé touche à un réglage du système&nbsp;: macOS demande donc ton mot de passe, une seule fois, pour autoriser Nuit Blanche à le faire. Ton mot de passe reste chez Apple, l'app ne le voit jamais.</p>
+          <p>Pour reconnaître le réseau de ton iPhone, macOS peut aussi te demander l'accès à la localisation&nbsp;: c'est sa règle pour lire le nom d'un réseau Wi‑Fi. Nuit Blanche ne s'en sert pour rien d'autre.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Quelle version de macOS faut-il&nbsp;?</summary>
+        <div class="qa__body">
+          <p>macOS 14 (Sonoma) ou plus récent, sur Mac Apple Silicon comme sur Mac Intel.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>Comment l'installer, et le désinstaller&nbsp;?</summary>
+        <div class="qa__body">
+          <p>Télécharge le fichier, ouvre-le, et glisse <strong>Nuit Blanche</strong> dans le dossier Applications.</p>
+          <p>Pour le désinstaller&nbsp;: éteins-le, quitte-le depuis la barre des menus, puis mets l'app à la corbeille. Ton Mac reprend ses habitudes de sommeil.</p>
+        </div>
+      </details>
+
+      <details class="qa">
+        <summary>C'est vraiment gratuit&nbsp;?</summary>
+        <div class="qa__body">
+          <p>Oui. Pas d'abonnement, pas de compte, pas de publicité. Rien n'est envoyé nulle part.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ————————————————————————————— fin -->
+<section class="wrap" aria-labelledby="fin-titre">
+  <div class="end">
+    <picture aria-hidden="true">
+      <source type="image/avif" srcset="assets/sky-800.avif 800w, assets/sky-1536.avif 1536w" sizes="(max-width: 1260px) 100vw, 1200px">
+      <img src="assets/sky-1536.jpg" width="1536" height="1024" alt="" loading="lazy" decoding="async">
+    </picture>
+    <p class="note" aria-hidden="true">bonne nuit&nbsp;!</p>
+    <h2 id="fin-titre">Ce soir, c'est ton Mac qui fait nuit blanche.</h2>
+    <a class="btn btn--go btn--lg" data-download href="https://github.com/Connected-Mate/nuit-blanche/releases/latest/download/NuitBlanche.dmg"><span data-download-label>Télécharger pour Mac</span></a>
+    <p class="fine"><span>Gratuit</span><span>macOS 14+</span><span>Notarisée par Apple</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <a class="mark" href="./">
+    <img src="assets/icon.svg" alt="" width="30" height="30" loading="lazy">
+    <span>Nuit Blanche</span>
+  </a>
+  <nav aria-label="Liens utiles">
+    <a href="https://github.com/Connected-Mate/nuit-blanche/releases">Versions</a>
+    <a href="https://github.com/Connected-Mate/nuit-blanche/issues">Signaler un souci</a>
+    <a href="https://x.com/AlexCormeraie" rel="noopener">@AlexCormeraie sur X</a>
+    <a href="en/" data-lang="en" hreflang="en" lang="en">English version</a>
+  </nav>
+  <p>© Connected Mate. Fait à Paris, souvent la nuit.</p>
+</footer>
+
+<nav class="capsule" aria-label="Navigation rapide">
+  <a class="capsule__opt" href="#fonctions">Fonctions</a>
+  <a href="#questions">Questions</a>
+  <a class="btn btn--go" data-download href="https://github.com/Connected-Mate/nuit-blanche/releases/latest/download/NuitBlanche.dmg"><span data-download-short>Télécharger</span></a>
+</nav>
+
+<script src="main.js" defer></script>
+</body>
+</html>
