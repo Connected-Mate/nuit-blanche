@@ -98,13 +98,43 @@
   var still = window.matchMedia('(prefers-reduced-motion: reduce)');
   var hasIO = 'IntersectionObserver' in window;
 
+  /* — un seul bouton met tout en pause (et s'en souvient) — */
+
+  var motionBtns = document.querySelectorAll('[data-motion]');
+  var paused = false;
+  try { paused = localStorage.getItem('nuitblanche-motion') === 'still'; } catch (e) {}
+  var setPaused = function (on) {
+    paused = on;
+    document.documentElement.classList.toggle('is-still', on);
+    Array.prototype.forEach.call(motionBtns, function (b) {
+      b.setAttribute('aria-pressed', String(on));
+      b.querySelector('span').textContent = b.getAttribute(on ? 'data-label-play' : 'data-label-pause');
+    });
+    try { localStorage.setItem('nuitblanche-motion', on ? 'still' : 'move'); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('nb:motion'));
+  };
+  if (!still.matches) {
+    Array.prototype.forEach.call(motionBtns, function (b) {
+      b.hidden = false;
+      b.addEventListener('click', function () { setPaused(!paused); });
+    });
+    if (paused) setPaused(true);
+  }
+
   /* scènes animées : elles ne tournent que visibles (batterie et processeur épargnés) */
   var lives = document.querySelectorAll('.stage, .vig');
   if (hasIO && lives.length) {
     var liveIO = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { en.target.classList.toggle('is-live', en.isIntersecting); });
+      entries.forEach(function (en) {
+        en.target.__seen = en.isIntersecting;
+        en.target.classList.toggle('is-live', en.isIntersecting && !paused);
+      });
     }, { threshold: 0.12 });
     Array.prototype.forEach.call(lives, function (n) { liveIO.observe(n); });
+    /* en pause : chaque scène revient à son image fixe la plus parlante */
+    document.addEventListener('nb:motion', function () {
+      Array.prototype.forEach.call(lives, function (n) { n.classList.toggle('is-live', !!n.__seen && !paused); });
+    });
   }
 
   /* apparitions au défilement : posées uniquement sous la ligne de flottaison,
@@ -145,14 +175,14 @@
     var auto = !still.matches;
 
     wt.style.setProperty('--wt-dur', DUR + 'ms');
-    wt.classList.toggle('is-auto', auto);
+    wt.classList.toggle('is-auto', auto && !paused);
 
     var play = function () {
       wt.classList.remove('is-playing');
       void wt.offsetWidth;                       /* relance les animations de la scène */
-      if (inView && !document.hidden) wt.classList.add('is-playing');
+      if (inView && !document.hidden && !paused) wt.classList.add('is-playing');
       clearTimeout(timer);
-      if (auto && inView && !document.hidden) {
+      if (auto && inView && !document.hidden && !paused) {
         timer = setTimeout(function () { go(current % total + 1); }, DUR + 700);
       }
     };
@@ -182,6 +212,10 @@
         else { clearTimeout(timer); wt.classList.remove('is-playing'); }
       }, { threshold: 0.35 }).observe(wt);
     }
+    document.addEventListener('nb:motion', function () {
+      wt.classList.toggle('is-auto', auto && !paused);
+      play();
+    });
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) { clearTimeout(timer); wt.classList.remove('is-playing'); }
       else if (inView) play();

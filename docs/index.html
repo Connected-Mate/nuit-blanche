@@ -157,7 +157,7 @@ try {
         <div class="power">
           <div class="power__text">
             <p class="power__name">Toujours éveillé <span class="power__note" aria-hidden="true">même capot fermé</span></p>
-            <p class="power__state" data-state-on="Ton Mac reste éveillé." data-state-off="Ton Mac s'endort normalement." aria-live="polite">Ton Mac reste éveillé.</p>
+            <p class="power__state sr-only" data-state-on="Ton Mac reste éveillé." data-state-off="Ton Mac s'endort normalement." aria-live="polite">Ton Mac reste éveillé.</p>
           </div>
           <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Toujours éveillé, démonstration" disabled data-power></button>
         </div>
@@ -222,7 +222,7 @@ try {
     <article class="feat">
       <div class="vig vig--bat" aria-hidden="true">
         <div class="bat"><div class="bat__body"><i class="bat__fill"></i></div><span class="bat__tip"></span><span class="bat__pct"></span></div>
-        <p class="chip vig__chip"><span class="chip__moon"><svg class="moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-linecap="round" stroke-linejoin="round"><g class="m-on"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" fill="currentColor"/><path d="M11.4 11.6c.9-1.3 2.1-1.9 3.4-1.9s2.5.6 3.4 1.9c-.9 1.3-2.1 1.9-3.4 1.9s-2.5-.6-3.4-1.9Z" stroke="currentColor" stroke-width="1.3"/><circle cx="14.8" cy="11.6" r=".95" fill="currentColor"/><path d="M20.6 1.6l.55 1.3 1.3.55-1.3.55-.55 1.3-.55-1.3-1.3-.55 1.3-.55Z" fill="currentColor"/></g><g class="m-off"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" stroke="currentColor" stroke-width="1.4"/><path d="M11.6 11c.9 1.1 2 1.6 3.2 1.6s2.3-.5 3.2-1.6M12.6 12.4l-.5 1.1M14.8 12.8v1.2M17 12.4l.5 1.1" stroke="currentColor" stroke-width="1.3"/></g></svg></span>Sous 10 % : Nuit Blanche s'arrête</p>
+        <p class="chip vig__chip"><span class="chip__moon"><svg class="moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-linecap="round" stroke-linejoin="round"><g class="m-on"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" fill="currentColor"/><path d="M11.4 11.6c.9-1.3 2.1-1.9 3.4-1.9s2.5.6 3.4 1.9c-.9 1.3-2.1 1.9-3.4 1.9s-2.5-.6-3.4-1.9Z" stroke="currentColor" stroke-width="1.3"/><circle cx="14.8" cy="11.6" r=".95" fill="currentColor"/><path d="M20.6 1.6l.55 1.3 1.3.55-1.3.55-.55 1.3-.55-1.3-1.3-.55 1.3-.55Z" fill="currentColor"/></g><g class="m-off"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" stroke="currentColor" stroke-width="1.4"/><path d="M11.6 11c.9 1.1 2 1.6 3.2 1.6s2.3-.5 3.2-1.6M12.6 12.4l-.5 1.1M14.8 12.8v1.2M17 12.4l.5 1.1" stroke="currentColor" stroke-width="1.3"/></g></svg></span>Sous 10 % : Nuit Blanche s'arrête</p>
       </div>
       <p class="note" aria-hidden="true">on veille sur toi</p>
       <h3>Il sait s'arrêter tout seul.</h3>
@@ -233,16 +233,17 @@ try {
       <div class="vig vig--menu" aria-hidden="true">
         <div class="mbar"><span class="mbar__moon"><svg class="moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-linecap="round" stroke-linejoin="round"><g class="m-on"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" fill="currentColor"/><path d="M11.4 11.6c.9-1.3 2.1-1.9 3.4-1.9s2.5.6 3.4 1.9c-.9 1.3-2.1 1.9-3.4 1.9s-2.5-.6-3.4-1.9Z" stroke="currentColor" stroke-width="1.3"/><circle cx="14.8" cy="11.6" r=".95" fill="currentColor"/><path d="M20.6 1.6l.55 1.3 1.3.55-1.3.55-.55 1.3-.55-1.3-1.3-.55 1.3-.55Z" fill="currentColor"/></g><g class="m-off"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" stroke="currentColor" stroke-width="1.4"/><path d="M11.6 11c.9 1.1 2 1.6 3.2 1.6s2.3-.5 3.2-1.6M12.6 12.4l-.5 1.1M14.8 12.8v1.2M17 12.4l.5 1.1" stroke="currentColor" stroke-width="1.3"/></g></svg></span><span class="mbar__i">5G</span><span class="mbar__i">03:12</span></div>
         <div class="mmenu">
-          <p class="mmenu__row mmenu__row--on"><span class="mmenu__check">✓</span>Toujours éveillé<kbd>⌘⇧N</kbd></p>
-          <p class="mmenu__row mmenu__row--muted">1 h · 3 h · Jusqu'à ce que je l'arrête</p>
+          <p class="mmenu__row mmenu__row--on"><span class="mmenu__check">✓</span>Toujours éveillé<kbd>⇧⌘N</kbd></p>
+          <p class="mmenu__row"><span class="mmenu__check">✓</span>Partage de connexion</p>
           <p class="mmenu__sep"></p>
-          <p class="mmenu__row">Quitter (la veille normale revient)</p>
+          <p class="mmenu__row"><span class="mmenu__check"></span>Ouvrir Nuit Blanche…</p>
+          <p class="mmenu__row"><span class="mmenu__check"></span>Quitter<kbd>⌘Q</kbd></p>
         </div>
         <svg class="cur" viewBox="0 0 24 24" width="24" height="24"><path d="M5 3l14 8.2-6.3 1.4 3.6 6.6-2.6 1.4-3.6-6.6L5 18.6V3Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
       </div>
       <p class="note" aria-hidden="true">un clic, là-haut</p>
       <h3>Toujours à portée, dans la barre des menus.</h3>
-      <p>Une petite lune avec un œil, en haut de l'écran&nbsp;: ouvert quand ton Mac veille, fermé quand il dort normalement. Un clic pour allumer, un clic pour éteindre, ou le raccourci <kbd>⌘⇧N</kbd>.</p>
+      <p>Une petite lune avec un œil, en haut de l'écran&nbsp;: ouvert quand ton Mac veille, fermé quand il dort normalement. Un clic pour allumer, un clic pour éteindre, ou le raccourci <kbd>⇧⌘N</kbd>.</p>
     </article>
   </div>
 </section>
@@ -289,15 +290,18 @@ try {
 <section class="wrap section" id="installer" aria-labelledby="installer-titre">
   <p class="kicker">Installer Nuit Blanche</p>
   <h2 class="h2" id="installer-titre">Une minute, cinq gestes.</h2>
-  <p class="intro">Pas besoin d'être doué en informatique : suis les étapes, l'animation te montre où cliquer.</p>
+  <p class="intro">Pas besoin d'être doué en informatique : suis les étapes, l'animation te montre où cliquer.</p>
   <div class="wt" data-step="5">
-    <ol class="wt__steps">
-        <li><button type="button" class="wt__step" data-go="1" aria-controls="wt-screen"><span class="wt__num">1</span><span class="wt__txt"><b>Télécharge</b><span>Clique sur « Télécharger pour Mac ». Le fichier NuitBlanche.dmg arrive dans tes Téléchargements.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
+    <div class="wt__side">
+      <ol class="wt__steps">
+        <li><button type="button" class="wt__step" data-go="1" aria-controls="wt-screen"><span class="wt__num">1</span><span class="wt__txt"><b>Télécharge</b><span>Clique sur « Télécharger pour Mac ». Le fichier NuitBlanche.dmg arrive dans tes Téléchargements.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
         <li><button type="button" class="wt__step" data-go="2" aria-controls="wt-screen"><span class="wt__num">2</span><span class="wt__txt"><b>Ouvre-le</b><span>Double-clique sur NuitBlanche.dmg. Une petite fenêtre s'ouvre.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
         <li><button type="button" class="wt__step" data-go="3" aria-controls="wt-screen"><span class="wt__num">3</span><span class="wt__txt"><b>Glisse dans Applications</b><span>Fais glisser l'icône de Nuit Blanche sur le dossier Applications. C'est installé.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
-        <li><button type="button" class="wt__step" data-go="4" aria-controls="wt-screen"><span class="wt__num">4</span><span class="wt__txt"><b>Autorise, une seule fois</b><span>Ouvre l'app et confirme « Ouvrir ». Clique « Autoriser » : Nuit Blanche ouvre le bon réglage et te montre l'interrupteur à activer.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
-        <li><button type="button" class="wt__step" data-go="5" aria-controls="wt-screen"><span class="wt__num">5</span><span class="wt__txt"><b>C'est allumé</b><span>« Toujours éveillé » est activé. La petite lune ouvre l'œil : ton Mac ne dort plus, même capot fermé.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
-    </ol>
+        <li><button type="button" class="wt__step" data-go="4" aria-controls="wt-screen"><span class="wt__num">4</span><span class="wt__txt"><b>Autorise, une seule fois</b><span>Ouvre l'app et confirme « Ouvrir ». Clique « Commencer », puis « Autoriser » : le bon réglage s'ouvre tout seul et un petit panneau te montre l'interrupteur à activer.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
+        <li><button type="button" class="wt__step" data-go="5" aria-controls="wt-screen"><span class="wt__num">5</span><span class="wt__txt"><b>C'est allumé</b><span>« Toujours éveillé » est activé. La petite lune ouvre l'œil : ton Mac ne dort plus, même capot fermé.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
+      </ol>
+      <button type="button" class="motion-btn" data-motion hidden aria-pressed="false" data-label-pause="Mettre les animations en pause" data-label-play="Relancer les animations"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/><path class="i-play" d="M8 5.5v13l10.5-6.5z"/></svg><span>Mettre les animations en pause</span></button>
+    </div>
     <div class="wt__screen" id="wt-screen" aria-hidden="true">
       <picture class="wt__wall"><source type="image/avif" srcset="assets/banner.avif"><img src="assets/banner.jpg" alt="" width="880" height="373" loading="lazy" decoding="async"></picture>
       <div class="wt__mbar"><span class="wt__mbar-moon"><svg class="moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke-linecap="round" stroke-linejoin="round"><g class="m-on"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" fill="currentColor"/><path d="M11.4 11.6c.9-1.3 2.1-1.9 3.4-1.9s2.5.6 3.4 1.9c-.9 1.3-2.1 1.9-3.4 1.9s-2.5-.6-3.4-1.9Z" stroke="currentColor" stroke-width="1.3"/><circle cx="14.8" cy="11.6" r=".95" fill="currentColor"/><path d="M20.6 1.6l.55 1.3 1.3.55-1.3.55-.55 1.3-.55-1.3-1.3-.55 1.3-.55Z" fill="currentColor"/></g><g class="m-off"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" stroke="currentColor" stroke-width="1.4"/><path d="M11.6 11c.9 1.1 2 1.6 3.2 1.6s2.3-.5 3.2-1.6M12.6 12.4l-.5 1.1M14.8 12.8v1.2M17 12.4l.5 1.1" stroke="currentColor" stroke-width="1.3"/></g></svg></span><span>5G</span><span>03:12</span></div>
@@ -335,12 +339,14 @@ try {
       <div class="scene scene--4" data-scene="4">
         <div class="dialog">
           <img src="assets/icon-64.png" alt="" width="40" height="40" loading="lazy">
-          <p>« Nuit Blanche » est une app téléchargée depuis Internet. Voulez-vous vraiment l'ouvrir ?</p>
+          <p>« Nuit Blanche » est une app téléchargée depuis Internet. Voulez-vous vraiment l'ouvrir ?</p>
           <span class="dialog__btns"><span class="ui-btn">Annuler</span><span class="ui-btn ui-btn--default">Ouvrir</span></span>
         </div>
         <div class="win win--onb">
           <div class="win__bar"><i></i><i></i><i></i></div>
-          <div class="win__body onb"><p class="onb__t">Une autorisation, une seule fois.</p><p class="onb__s">Pour le capot fermé. Ensuite, plus jamais de mot de passe.</p><span class="onb__btn">Autoriser</span><span class="onb__later">Plus tard</span></div>
+          <div class="win__body onb onb--1"><p class="onb__t">Ton Mac reste éveillé, même capot fermé.</p><p class="onb__s">Sur batterie, sans écran. Un seul bouton.</p><span class="onb__btn">Commencer</span></div>
+          <div class="win__body onb onb--2"><p class="onb__t">Une autorisation, une seule fois.</p><p class="onb__s">Pour le capot fermé. Ensuite, plus jamais de mot de passe.</p><span class="onb__btn">Autoriser</span><span class="onb__later">Plus tard</span></div>
+          <div class="win__body onb onb--3"><p class="onb__t">C'est autorisé. Merci !</p><span class="onb__btn">Continuer</span></div>
         </div>
         <div class="win win--settings">
           <div class="win__bar"><i></i><i></i><i></i><span class="win__title">Réglages Système</span></div>
@@ -348,7 +354,7 @@ try {
         </div>
         <div class="gpanel">
           <img src="assets/icon-64.png" alt="" width="22" height="22" loading="lazy">
-          <span class="gpanel__txt"><b class="gpanel__a">Active Nuit Blanche ici</b><b class="gpanel__b">C'est bon, merci !</b><small>“Autoriser en arrière-plan”</small></span>
+          <span class="gpanel__txt"><b class="gpanel__a">Active Nuit Blanche ici</b><b class="gpanel__b">C'est bon, merci !</b><small>“Autoriser en arrière-plan”</small></span>
           <span class="gpanel__arrow">↑</span><span class="gpanel__ok">✓</span>
         </div>
         <svg class="cur" viewBox="0 0 24 24" width="24" height="24"><path d="M5 3l14 8.2-6.3 1.4 3.6 6.6-2.6 1.4-3.6-6.6L5 18.6V3Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
@@ -466,6 +472,7 @@ try {
     <a href="https://x.com/AlexCormeraie" rel="noopener">@AlexCormeraie sur X</a>
     <a href="en/" data-lang="en" hreflang="en" lang="en">English version</a>
   </nav>
+  <button type="button" class="motion-btn" data-motion hidden aria-pressed="false" data-label-pause="Mettre les animations en pause" data-label-play="Relancer les animations"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path class="i-pause" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/><path class="i-play" d="M8 5.5v13l10.5-6.5z"/></svg><span>Mettre les animations en pause</span></button>
   <p>© Connected Mate. Fait à Paris, souvent la nuit.</p>
 </footer>
 
