@@ -10,15 +10,11 @@
   var COPY = english ? {
     soon: 'Coming soon',
     soonShort: 'Coming soon',
-    soonNote: 'The first version is on its way — follow the releases page.',
-    on: 'on',
-    off: 'off'
+    soonNote: 'The first version is on its way — follow the releases page.'
   } : {
     soon: 'Bientôt disponible',
     soonShort: 'Bientôt',
-    soonNote: 'La première version arrive très vite : suis la page des versions.',
-    on: 'activé',
-    off: 'désactivé'
+    soonNote: 'La première version arrive très vite : suis la page des versions.'
   };
 
   /* — le choix de langue prime sur la détection automatique — */
@@ -35,16 +31,14 @@
   var power = stage && stage.querySelector('[data-power]');
   if (power) {
     var state = stage.querySelector('.power__state');
-    var minis = stage.querySelectorAll('.switch--sm');
-    var miniLabels = stage.querySelectorAll('[data-mini-label]');
+    var pill = stage.querySelector('.app-head__pill');
     power.disabled = false;
     power.addEventListener('click', function () {
       var on = power.getAttribute('aria-checked') !== 'true';
       power.setAttribute('aria-checked', String(on));
       stage.classList.toggle('is-off', !on);
       state.textContent = state.getAttribute(on ? 'data-state-on' : 'data-state-off');
-      Array.prototype.forEach.call(minis, function (m) { m.setAttribute('data-on', String(on)); });
-      Array.prototype.forEach.call(miniLabels, function (l) { l.textContent = on ? COPY.on : COPY.off; });
+      if (pill) pill.textContent = pill.getAttribute(on ? 'data-pill-on' : 'data-pill-off');
     });
   }
 

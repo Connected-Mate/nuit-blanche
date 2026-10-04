@@ -13,8 +13,8 @@
 <link rel="alternate" hreflang="fr" href="https://connected-mate.github.io/nuit-blanche/">
 <link rel="alternate" hreflang="en" href="https://connected-mate.github.io/nuit-blanche/en/">
 <link rel="alternate" hreflang="x-default" href="https://connected-mate.github.io/nuit-blanche/">
-<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="../assets/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
 
@@ -68,7 +68,7 @@ try {
 
 <header class="wrap top">
   <a class="mark" href="./" aria-label="Nuit Blanche, home">
-    <img src="../assets/icon.svg" alt="" width="30" height="30">
+    <img src="../assets/icon-64.png" alt="" width="30" height="30">
     <span>Nuit Blanche</span>
   </a>
   <p class="langs">
@@ -101,7 +101,8 @@ try {
     </div>
     <p class="fine">
       <span>macOS 14 or later</span>
-          </p>
+      <span>Apple Silicon and Intel</span>
+    </p>
     <p class="fine" data-download-note hidden></p>
   </div>
 
@@ -114,7 +115,7 @@ try {
 
     <div class="menubar" aria-hidden="true">
       <span class="menubar__item menubar__moon">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/></svg>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/><circle cx="16" cy="8.4" r="2.1" fill="#0b1230"/></svg>
       </span>
       <span class="menubar__item">
         <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4 9.5h3v5H4zM9.2 7.5h3v9h-3zM14.4 5.5h3v13h-3z"/></svg>
@@ -125,21 +126,31 @@ try {
 
     <div class="window" role="group" aria-label="Preview of the Nuit Blanche window">
       <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="power">
-        <span class="power__moon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/></svg>
-        </span>
-        <div class="power__text">
-          <p class="power__name">Always awake</p>
-          <p class="power__state" data-state-on="Even with the lid closed" data-state-off="Your Mac may sleep" aria-live="polite">Even with the lid closed</p>
-        </div>
-        <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Always awake, demo" disabled data-power></button>
+      <div class="app-head">
+        <picture aria-hidden="true"><source type="image/avif" srcset="../assets/banner.avif"><img src="../assets/banner.jpg" alt="" width="880" height="373" decoding="async"></picture>
+        <p class="app-head__title">Nuit Blanche</p>
+        <p class="app-head__sub">Your Mac only sleeps when you want it to.</p>
+        <p class="app-head__pill" data-pill-on="Awake" data-pill-off="Normal sleep">Awake</p>
       </div>
-      <ul class="rows">
-        <li><span>Personal Hotspot<small>My iPhone · connected</small></span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span></li>
-        <li><span>Battery safety</span><span class="val">Stops below 10%</span></li>
-        <li><span>Duration</span><span class="val">Until I stop it</span></li>
-      </ul>
+      <div class="app-card">
+        <div class="power">
+          <div class="power__text">
+            <p class="power__name">Always awake</p>
+            <p class="power__state" data-state-on="Your Mac stays awake, even with the lid closed." data-state-off="Your Mac sleeps as usual." aria-live="polite">Your Mac stays awake, even with the lid closed.</p>
+          </div>
+          <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Always awake, demo" disabled data-power></button>
+        </div>
+        <p class="seg" aria-hidden="true"><span>1 h</span><span>3 h</span><span class="is-on">Until I stop it</span></p>
+      </div>
+      <div class="app-card">
+        <div class="power">
+          <div class="power__text">
+            <p class="power__name power__name--sm">Personal Hotspot</p>
+            <p class="power__state">Your Mac joins your iPhone as soon as it sees it.</p>
+          </div>
+          <span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>on</span>
+        </div>
+      </div>
     </div>
 
     <p class="stage__hint" aria-hidden="true">Try the switch</p>
@@ -161,19 +172,19 @@ try {
     <article class="feat">
       <p class="note" aria-hidden="true">always online</p>
       <h3>Your iPhone becomes its connection.</h3>
-      <p>Turn on Personal Hotspot on your iPhone and pick it once in Nuit Blanche. Whenever it shows up, your Mac rejoins it on its own and stays on it. On the train, at the café, at the bottom of the garden: it never drops off.</p>
+      <p>Turn on Personal Hotspot on your iPhone and pick it once in Nuit Blanche. Whenever it shows up, your Mac joins it on its own. By default, only when there’s no other way online, to spare your data plan. On the train, at the café, at the bottom of the garden: it never drops off.</p>
     </article>
 
     <article class="feat">
       <p class="note" aria-hidden="true">we’ve got you</p>
       <h3>It knows when to stop.</h3>
-      <p>Below 10% battery, Nuit Blanche switches off and lets your Mac rest. You can also pick a duration: 1 hour, 3 hours, or until you stop it.</p>
+      <p>On battery, below 10%, Nuit Blanche stops, lets you know and lets your Mac rest. Plugged in, it never stops. You can also pick a duration: 1 hour, 3 hours, or until you stop it.</p>
     </article>
 
     <article class="feat">
       <p class="note" aria-hidden="true">one click, up there</p>
       <h3>Always within reach, in the menu bar.</h3>
-      <p>A little moon at the top of your screen. Full when your Mac is staying up, quiet otherwise. One click on, one click off: no hidden settings, no jargon.</p>
+      <p>A little moon with an eye at the top of your screen: open when your Mac is staying up, closed when it sleeps as usual. One click on, one click off, or the <kbd>⌘⇧N</kbd> shortcut.</p>
     </article>
   </div>
 </section>
@@ -216,6 +227,31 @@ try {
   </div>
 </section>
 
+<!-- ————————————————————————————— premier lancement -->
+<section class="wrap section" aria-labelledby="premier-titre">
+  <div class="first">
+    <div>
+      <p class="kicker">First launch</p>
+      <h2 class="h2" id="premier-titre">One step, and you’re set.</h2>
+      <p class="intro">The first time, macOS wants your OK so Nuit Blanche can keep your Mac awake with the lid closed. The app walks you through it, and it only happens once.</p>
+      <ol class="steps">
+        <li>Open Nuit Blanche and turn on <b>Always awake</b>.</li>
+        <li>Click <b>Open Settings</b>, then turn on Nuit Blanche under <b>Allow in the Background</b>.</li>
+        <li>Close the lid. That’s it: the little moon keeps its eye open.</li>
+      </ol>
+    </div>
+    <figure class="first__shot">
+      <p class="note" aria-hidden="true">the real app (in French)!</p>
+      <picture>
+        <source type="image/avif" srcset="../assets/shot-main-dark.avif" media="(prefers-color-scheme: dark)">
+        <source type="image/png" srcset="../assets/shot-main-dark.png" media="(prefers-color-scheme: dark)">
+        <source type="image/avif" srcset="../assets/shot-main-light-setup.avif">
+        <img src="../assets/shot-main-light-setup.png" width="920" height="1450" alt="The Nuit Blanche window on first launch, shown in French: the “Always awake” switch on, the duration choice of 1 h, 3 h or until I stop it, a note asking to allow Nuit Blanche in the background with an “Open Settings” button, and the “Personal Hotspot” card." loading="lazy" decoding="async">
+      </picture>
+    </figure>
+  </div>
+</section>
+
 <!-- ————————————————————————————— questions -->
 <section class="wrap section" id="questions" aria-labelledby="questions-titre">
   <div class="faq">
@@ -244,22 +280,22 @@ try {
       <details class="qa">
         <summary>Will it drain my battery?</summary>
         <div class="qa__body">
-          <p>An awake Mac uses more power than a sleeping one, that’s normal. That’s why Nuit Blanche watches the battery: below 10%, it stops on its own and lets your Mac sleep. Plugged in, there’s nothing to worry about.</p>
+          <p>An awake Mac uses more power than a sleeping one, that’s normal. That’s why Nuit Blanche watches the battery: on battery, below 10%, it stops on its own, sends you a notification and lets your Mac sleep. You can set that level anywhere from 5 to 50%. Plugged in, it never stops.</p>
         </div>
       </details>
 
       <details class="qa">
         <summary>Does the hotspot use my mobile data?</summary>
         <div class="qa__body">
-          <p>Yes: when your Mac goes online through your iPhone, it uses your mobile plan’s data, like any hotspot. Nuit Blanche only joins it if you chose it, and you can turn the option off at any time.</p>
+          <p>Yes: when your Mac goes online through your iPhone, it uses your mobile plan’s data, like any hotspot. That’s why, by default, Nuit Blanche only joins it when your Mac has no other way online. You can also tell it to always prefer it, or turn the option off.</p>
         </div>
       </details>
 
       <details class="qa">
         <summary>Why does it ask for permission the first time?</summary>
         <div class="qa__body">
-          <p>To keep your Mac awake with the lid closed, Nuit Blanche relies on a small helper that runs in the background. macOS asks you to allow it once, in System Settings, under General. After that, nothing more to do.</p>
-          <p>If you use Personal Hotspot, macOS will also ask for Location access: that’s its rule for seeing Wi‑Fi network names. Nuit Blanche uses it for nothing else.</p>
+          <p>To stay awake with the lid closed, Nuit Blanche relies on a small helper in the background. Just once, macOS asks you to allow it in System Settings, under General, in “Allow in the Background”. The app takes you there in one click, and macOS may ask for your Mac password at that moment. After that, never again.</p>
+          <p>If you use Personal Hotspot, macOS will also ask for Location access: that’s its rule for seeing Wi‑Fi network names. And Nuit Blanche asks to show notifications, to let you know when it stops on its own. None of this ever leaves your Mac.</p>
         </div>
       </details>
 
@@ -274,7 +310,7 @@ try {
         <summary>How do I install and uninstall it?</summary>
         <div class="qa__body">
           <p>Download the file, open it, and drag <strong>Nuit Blanche</strong> into your Applications folder.</p>
-          <p>To uninstall: switch it off, quit it from the menu bar, then move the app to the Trash. Your Mac goes back to its usual sleep habits.</p>
+          <p>To uninstall: in the little moon’s menu, choose “Quit”. Your Mac gets its normal sleep back within seconds. Then move the app to the Trash.</p>
         </div>
       </details>
 
@@ -306,7 +342,7 @@ try {
 
 <footer class="wrap foot">
   <a class="mark" href="./">
-    <img src="../assets/icon.svg" alt="" width="30" height="30" loading="lazy">
+    <img src="../assets/icon-64.png" alt="" width="30" height="30" loading="lazy">
     <span>Nuit Blanche</span>
   </a>
   <nav aria-label="Useful links">

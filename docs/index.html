@@ -13,8 +13,8 @@
 <link rel="alternate" hreflang="fr" href="https://connected-mate.github.io/nuit-blanche/">
 <link rel="alternate" hreflang="en" href="https://connected-mate.github.io/nuit-blanche/en/">
 <link rel="alternate" hreflang="x-default" href="https://connected-mate.github.io/nuit-blanche/">
-<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 
@@ -74,7 +74,7 @@ try {
 
 <header class="wrap top">
   <a class="mark" href="./" aria-label="Nuit Blanche, accueil">
-    <img src="assets/icon.svg" alt="" width="30" height="30">
+    <img src="assets/icon-64.png" alt="" width="30" height="30">
     <span>Nuit Blanche</span>
   </a>
   <p class="langs">
@@ -107,7 +107,8 @@ try {
     </div>
     <p class="fine">
       <span>macOS 14 ou plus récent</span>
-          </p>
+      <span>Apple Silicon et Intel</span>
+    </p>
     <p class="fine" data-download-note hidden></p>
   </div>
 
@@ -120,7 +121,7 @@ try {
 
     <div class="menubar" aria-hidden="true">
       <span class="menubar__item menubar__moon">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/></svg>
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/><circle cx="16" cy="8.4" r="2.1" fill="#0b1230"/></svg>
       </span>
       <span class="menubar__item">
         <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M4 9.5h3v5H4zM9.2 7.5h3v9h-3zM14.4 5.5h3v13h-3z"/></svg>
@@ -131,21 +132,31 @@ try {
 
     <div class="window" role="group" aria-label="Aperçu de la fenêtre Nuit Blanche">
       <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="power">
-        <span class="power__moon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/></svg>
-        </span>
-        <div class="power__text">
-          <p class="power__name">Toujours éveillé</p>
-          <p class="power__state" data-state-on="Même capot fermé" data-state-off="Ton Mac pourra dormir" aria-live="polite">Même capot fermé</p>
-        </div>
-        <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Toujours éveillé, démonstration" disabled data-power></button>
+      <div class="app-head">
+        <picture aria-hidden="true"><source type="image/avif" srcset="assets/banner.avif"><img src="assets/banner.jpg" alt="" width="880" height="373" decoding="async"></picture>
+        <p class="app-head__title">Nuit Blanche</p>
+        <p class="app-head__sub">Ton Mac ne dort que si tu le veux.</p>
+        <p class="app-head__pill" data-pill-on="Éveillé" data-pill-off="Veille normale">Éveillé</p>
       </div>
-      <ul class="rows">
-        <li><span>Partage de connexion<small>Mon iPhone · connecté</small></span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span></li>
-        <li><span>Sécurité batterie</span><span class="val">S'arrête sous 10&nbsp;%</span></li>
-        <li><span>Durée</span><span class="val">Jusqu'à ce que je l'arrête</span></li>
-      </ul>
+      <div class="app-card">
+        <div class="power">
+          <div class="power__text">
+            <p class="power__name">Toujours éveillé</p>
+            <p class="power__state" data-state-on="Ton Mac reste éveillé, même capot fermé." data-state-off="Ton Mac s'endort normalement." aria-live="polite">Ton Mac reste éveillé, même capot fermé.</p>
+          </div>
+          <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Toujours éveillé, démonstration" disabled data-power></button>
+        </div>
+        <p class="seg" aria-hidden="true"><span>1 h</span><span>3 h</span><span class="is-on">Jusqu'à ce que je l'arrête</span></p>
+      </div>
+      <div class="app-card">
+        <div class="power">
+          <div class="power__text">
+            <p class="power__name power__name--sm">Partage de connexion</p>
+            <p class="power__state">Ton Mac rejoint ton iPhone dès qu'il le voit.</p>
+          </div>
+          <span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span>
+        </div>
+      </div>
     </div>
 
     <p class="stage__hint" aria-hidden="true">Essaie l'interrupteur</p>
@@ -167,19 +178,19 @@ try {
     <article class="feat">
       <p class="note" aria-hidden="true">toujours en ligne</p>
       <h3>Ton iPhone devient sa connexion.</h3>
-      <p>Active le partage de connexion sur ton iPhone et choisis-le une fois dans Nuit Blanche. Dès qu'il apparaît, ton Mac s'y reconnecte tout seul, et y reste. Dans le train, au café, au fond du jardin&nbsp;: il ne décroche plus.</p>
+      <p>Active le partage de connexion sur ton iPhone et choisis-le une fois dans Nuit Blanche. Dès qu'il apparaît, ton Mac le rejoint tout seul. Par défaut, seulement quand il n'a pas d'autre accès à Internet, pour ménager ton forfait. Dans le train, au café, au fond du jardin&nbsp;: il ne décroche plus.</p>
     </article>
 
     <article class="feat">
       <p class="note" aria-hidden="true">on veille sur toi</p>
       <h3>Il sait s'arrêter tout seul.</h3>
-      <p>Sous 10&nbsp;% de batterie, Nuit Blanche s'éteint et laisse ton Mac se reposer. Tu peux aussi choisir une durée&nbsp;: 1&nbsp;heure, 3&nbsp;heures, ou jusqu'à ce que tu l'arrêtes.</p>
+      <p>Sur batterie, sous 10&nbsp;%, Nuit Blanche s'arrête, te prévient et laisse ton Mac se reposer. Branché, il ne s'arrête jamais. Tu peux aussi choisir une durée&nbsp;: 1&nbsp;heure, 3&nbsp;heures, ou jusqu'à ce que tu l'arrêtes.</p>
     </article>
 
     <article class="feat">
       <p class="note" aria-hidden="true">un clic, là-haut</p>
       <h3>Toujours à portée, dans la barre des menus.</h3>
-      <p>Une petite lune en haut de l'écran. Pleine quand ton Mac veille, discrète sinon. Un clic pour allumer, un clic pour éteindre&nbsp;: pas de réglage caché, pas de jargon.</p>
+      <p>Une petite lune avec un œil, en haut de l'écran&nbsp;: ouvert quand ton Mac veille, fermé quand il dort normalement. Un clic pour allumer, un clic pour éteindre, ou le raccourci <kbd>⌘⇧N</kbd>.</p>
     </article>
   </div>
 </section>
@@ -222,6 +233,31 @@ try {
   </div>
 </section>
 
+<!-- ————————————————————————————— premier lancement -->
+<section class="wrap section" aria-labelledby="premier-titre">
+  <div class="first">
+    <div>
+      <p class="kicker">Au premier lancement</p>
+      <h2 class="h2" id="premier-titre">Une seule étape, et c’est réglé.</h2>
+      <p class="intro">La première fois, macOS veut ton accord pour que Nuit Blanche puisse garder ton Mac éveillé capot fermé. L'app te guide, et ça ne se fait qu'une fois.</p>
+      <ol class="steps">
+        <li>Ouvre Nuit Blanche et allume <b>Toujours éveillé</b>.</li>
+        <li>Clique <b>Ouvrir les Réglages</b>, puis active Nuit Blanche sous <b>Autoriser en arrière-plan</b>.</li>
+        <li>Ferme le capot. C'est tout&nbsp;: la petite lune garde l'œil ouvert.</li>
+      </ol>
+    </div>
+    <figure class="first__shot">
+      <p class="note" aria-hidden="true">la vraie app !</p>
+      <picture>
+        <source type="image/avif" srcset="assets/shot-main-dark.avif" media="(prefers-color-scheme: dark)">
+        <source type="image/png" srcset="assets/shot-main-dark.png" media="(prefers-color-scheme: dark)">
+        <source type="image/avif" srcset="assets/shot-main-light-setup.avif">
+        <img src="assets/shot-main-light-setup.png" width="920" height="1450" alt="La fenêtre de Nuit Blanche au premier lancement : l'interrupteur « Toujours éveillé » allumé, le choix de durée 1 h, 3 h ou jusqu'à ce que je l'arrête, une note qui invite à autoriser Nuit Blanche en arrière-plan avec un bouton « Ouvrir les Réglages », et la carte « Partage de connexion »." loading="lazy" decoding="async">
+      </picture>
+    </figure>
+  </div>
+</section>
+
 <!-- ————————————————————————————— questions -->
 <section class="wrap section" id="questions" aria-labelledby="questions-titre">
   <div class="faq">
@@ -250,22 +286,22 @@ try {
       <details class="qa">
         <summary>Va-t-il vider ma batterie&nbsp;?</summary>
         <div class="qa__body">
-          <p>Un Mac éveillé consomme plus qu'un Mac endormi, c'est normal. C'est pour ça que Nuit Blanche surveille la batterie&nbsp;: sous 10&nbsp;%, il s'arrête tout seul et laisse ton Mac s'endormir. Branché sur secteur, tu n'as pas à t'en soucier.</p>
+          <p>Un Mac éveillé consomme plus qu'un Mac endormi, c'est normal. C'est pour ça que Nuit Blanche surveille la batterie&nbsp;: sur batterie, sous 10&nbsp;%, il s'arrête tout seul, t'envoie une notification et laisse ton Mac s'endormir. Tu peux régler ce seuil entre 5 et 50&nbsp;%. Branché sur secteur, il ne s'arrête jamais.</p>
         </div>
       </details>
 
       <details class="qa">
         <summary>Le partage de connexion utilise-t-il mon forfait&nbsp;?</summary>
         <div class="qa__body">
-          <p>Oui&nbsp;: quand ton Mac passe par ton iPhone, il consomme les données de ton forfait mobile, comme n'importe quel partage de connexion. Nuit Blanche ne s'y connecte que si tu l'as choisi, et tu peux couper l'option à tout moment.</p>
+          <p>Oui&nbsp;: quand ton Mac passe par ton iPhone, il consomme les données de ton forfait mobile, comme n'importe quel partage de connexion. C'est pour ça que, par défaut, Nuit Blanche ne le rejoint que quand ton Mac n'a pas d'autre accès à Internet. Tu peux aussi lui dire de toujours le préférer, ou couper l'option.</p>
         </div>
       </details>
 
       <details class="qa">
         <summary>Pourquoi l'app demande-t-elle une autorisation au premier lancement&nbsp;?</summary>
         <div class="qa__body">
-          <p>Pour garder ton Mac éveillé capot fermé, Nuit Blanche s'appuie sur un petit assistant qui tourne en arrière-plan. macOS te demande de l'autoriser une seule fois, dans Réglages Système, section Général. Ensuite, plus rien à faire.</p>
-          <p>Si tu utilises le partage de connexion, macOS te demandera aussi l'accès à la localisation&nbsp;: c'est sa règle pour voir le nom des réseaux Wi‑Fi. Nuit Blanche ne s'en sert pour rien d'autre.</p>
+          <p>Pour rester éveillé capot fermé, Nuit Blanche s'appuie sur un petit assistant en arrière-plan. Une seule fois, macOS te demande de l'autoriser dans Réglages Système, section Général, sous «&nbsp;Autoriser en arrière-plan&nbsp;». L'app t'y emmène d'un bouton, et macOS peut te demander ton mot de passe à ce moment-là. Ensuite, plus jamais.</p>
+          <p>Si tu utilises le partage de connexion, macOS te demandera aussi l'accès à la localisation&nbsp;: c'est sa règle pour voir le nom des réseaux Wi‑Fi. Et Nuit Blanche te demande d'afficher des notifications, pour te prévenir quand il s'arrête tout seul. Rien de tout ça ne sort de ton Mac.</p>
         </div>
       </details>
 
@@ -280,7 +316,7 @@ try {
         <summary>Comment l'installer, et le désinstaller&nbsp;?</summary>
         <div class="qa__body">
           <p>Télécharge le fichier, ouvre-le, et glisse <strong>Nuit Blanche</strong> dans le dossier Applications.</p>
-          <p>Pour le désinstaller&nbsp;: éteins-le, quitte-le depuis la barre des menus, puis mets l'app à la corbeille. Ton Mac reprend ses habitudes de sommeil.</p>
+          <p>Pour le désinstaller&nbsp;: dans le menu de la petite lune, choisis «&nbsp;Quitter&nbsp;». Ton Mac retrouve sa veille normale en quelques secondes. Puis mets l'app à la corbeille.</p>
         </div>
       </details>
 
@@ -312,7 +348,7 @@ try {
 
 <footer class="wrap foot">
   <a class="mark" href="./">
-    <img src="assets/icon.svg" alt="" width="30" height="30" loading="lazy">
+    <img src="assets/icon-64.png" alt="" width="30" height="30" loading="lazy">
     <span>Nuit Blanche</span>
   </a>
   <nav aria-label="Liens utiles">
