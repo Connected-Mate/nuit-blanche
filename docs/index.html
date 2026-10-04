@@ -107,8 +107,7 @@ try {
     </div>
     <p class="fine">
       <span>macOS 14 ou plus récent</span>
-      <span>Apple Silicon et Intel</span>
-    </p>
+          </p>
     <p class="fine" data-download-note hidden></p>
   </div>
 
@@ -137,16 +136,15 @@ try {
           <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/></svg>
         </span>
         <div class="power__text">
-          <p class="power__name">Nuit Blanche</p>
-          <p class="power__state" data-state-on="Ton Mac reste éveillé" data-state-off="Ton Mac pourra dormir" aria-live="polite">Ton Mac reste éveillé</p>
+          <p class="power__name">Toujours éveillé</p>
+          <p class="power__state" data-state-on="Même capot fermé" data-state-off="Ton Mac pourra dormir" aria-live="polite">Même capot fermé</p>
         </div>
-        <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Nuit Blanche, démonstration" disabled data-power></button>
+        <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Toujours éveillé, démonstration" disabled data-power></button>
       </div>
       <ul class="rows">
-        <li><span>Même capot fermé</span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span></li>
-        <li><span>Partage de connexion forcé<small>Mon iPhone · connecté</small></span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span></li>
-        <li><span>Sécurité batterie</span><span class="val">S'arrête sous 20&nbsp;%</span></li>
-        <li><span>Durée</span><span class="val">Jusqu'à demain 8&nbsp;h</span></li>
+        <li><span>Partage de connexion<small>Mon iPhone · connecté</small></span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span></li>
+        <li><span>Sécurité batterie</span><span class="val">S'arrête sous 10&nbsp;%</span></li>
+        <li><span>Durée</span><span class="val">Jusqu'à ce que je l'arrête</span></li>
       </ul>
     </div>
 
@@ -169,13 +167,13 @@ try {
     <article class="feat">
       <p class="note" aria-hidden="true">toujours en ligne</p>
       <h3>Ton iPhone devient sa connexion.</h3>
-      <p>Choisis ton iPhone une fois. Dès que son partage de connexion est à portée, ton Mac s'y reconnecte tout seul, et le reste. Dans le train, au café, au fond du jardin&nbsp;: il ne décroche plus.</p>
+      <p>Active le partage de connexion sur ton iPhone et choisis-le une fois dans Nuit Blanche. Dès qu'il apparaît, ton Mac s'y reconnecte tout seul, et y reste. Dans le train, au café, au fond du jardin&nbsp;: il ne décroche plus.</p>
     </article>
 
     <article class="feat">
       <p class="note" aria-hidden="true">on veille sur toi</p>
       <h3>Il sait s'arrêter tout seul.</h3>
-      <p>Quand la batterie descend sous le seuil que tu as choisi, Nuit Blanche s'éteint et laisse ton Mac se reposer. Tu peux aussi fixer une durée&nbsp;: il s'arrête à l'heure dite.</p>
+      <p>Sous 10&nbsp;% de batterie, Nuit Blanche s'éteint et laisse ton Mac se reposer. Tu peux aussi choisir une durée&nbsp;: 1&nbsp;heure, 3&nbsp;heures, ou jusqu'à ce que tu l'arrêtes.</p>
     </article>
 
     <article class="feat">
@@ -236,7 +234,7 @@ try {
       <details class="qa">
         <summary>Est-ce que c'est sans danger pour mon Mac&nbsp;?</summary>
         <div class="qa__body">
-          <p>Oui. Nuit Blanche ne fait qu'une chose&nbsp;: dire à ton Mac de ne pas s'endormir tant qu'il est allumé. Dès que tu l'éteins, ou que tu quittes l'app, ton Mac retrouve exactement ses réglages habituels.</p>
+          <p>Oui. Nuit Blanche ne fait qu'une chose&nbsp;: dire à ton Mac de ne pas s'endormir tant que «&nbsp;Toujours éveillé&nbsp;» est allumé. Dès que tu l'éteins, ou que tu quittes l'app, ton Mac retrouve son sommeil normal.</p>
           <p>L'app est notarisée par Apple&nbsp;: Apple l'a vérifiée avant que tu puisses l'ouvrir.</p>
         </div>
       </details>
@@ -252,7 +250,7 @@ try {
       <details class="qa">
         <summary>Va-t-il vider ma batterie&nbsp;?</summary>
         <div class="qa__body">
-          <p>Un Mac éveillé consomme plus qu'un Mac endormi, c'est normal. C'est pour ça que Nuit Blanche surveille la batterie&nbsp;: sous le seuil que tu choisis, il s'arrête et laisse ton Mac s'endormir. Branché sur secteur, tu n'as pas à t'en soucier.</p>
+          <p>Un Mac éveillé consomme plus qu'un Mac endormi, c'est normal. C'est pour ça que Nuit Blanche surveille la batterie&nbsp;: sous 10&nbsp;%, il s'arrête tout seul et laisse ton Mac s'endormir. Branché sur secteur, tu n'as pas à t'en soucier.</p>
         </div>
       </details>
 
@@ -266,15 +264,15 @@ try {
       <details class="qa">
         <summary>Pourquoi l'app demande-t-elle une autorisation au premier lancement&nbsp;?</summary>
         <div class="qa__body">
-          <p>Empêcher la mise en veille capot fermé touche à un réglage du système&nbsp;: macOS demande donc ton mot de passe, une seule fois, pour autoriser Nuit Blanche à le faire. Ton mot de passe reste chez Apple, l'app ne le voit jamais.</p>
-          <p>Pour reconnaître le réseau de ton iPhone, macOS peut aussi te demander l'accès à la localisation&nbsp;: c'est sa règle pour lire le nom d'un réseau Wi‑Fi. Nuit Blanche ne s'en sert pour rien d'autre.</p>
+          <p>Pour garder ton Mac éveillé capot fermé, Nuit Blanche s'appuie sur un petit assistant qui tourne en arrière-plan. macOS te demande de l'autoriser une seule fois, dans Réglages Système, section Général. Ensuite, plus rien à faire.</p>
+          <p>Si tu utilises le partage de connexion, macOS te demandera aussi l'accès à la localisation&nbsp;: c'est sa règle pour voir le nom des réseaux Wi‑Fi. Nuit Blanche ne s'en sert pour rien d'autre.</p>
         </div>
       </details>
 
       <details class="qa">
         <summary>Quelle version de macOS faut-il&nbsp;?</summary>
         <div class="qa__body">
-          <p>macOS 14 (Sonoma) ou plus récent, sur Mac Apple Silicon comme sur Mac Intel.</p>
+          <p>macOS 14 (Sonoma) ou plus récent.</p>
         </div>
       </details>
 

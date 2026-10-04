@@ -1,6 +1,6 @@
 # Nuit Blanche — ton Mac ne dort plus
 
-Un seul bouton : ton Mac reste éveillé, même capot fermé. Tes agents IA, téléchargements, rendus et synchros continuent pendant que tu t'en vas. Et avec le partage de connexion forcé, il reste en ligne sur ton iPhone.
+Un seul bouton : ton Mac reste éveillé, même capot fermé. Tes agents IA, téléchargements, rendus et synchros continuent pendant que tu t'en vas. Et avec le partage de connexion, il reste en ligne sur ton iPhone.
 
 **Télécharger** : la dernière version est dans [Releases](https://github.com/Connected-Mate/nuit-blanche/releases/latest) (`NuitBlanche.dmg`, macOS 14 ou plus récent). Application notarisée par Apple.
 

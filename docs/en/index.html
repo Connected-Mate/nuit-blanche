@@ -101,8 +101,7 @@ try {
     </div>
     <p class="fine">
       <span>macOS 14 or later</span>
-      <span>Apple Silicon and Intel</span>
-    </p>
+          </p>
     <p class="fine" data-download-note hidden></p>
   </div>
 
@@ -131,16 +130,15 @@ try {
           <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z"/></svg>
         </span>
         <div class="power__text">
-          <p class="power__name">Nuit Blanche</p>
-          <p class="power__state" data-state-on="Your Mac stays awake" data-state-off="Your Mac may sleep" aria-live="polite">Your Mac stays awake</p>
+          <p class="power__name">Always awake</p>
+          <p class="power__state" data-state-on="Even with the lid closed" data-state-off="Your Mac may sleep" aria-live="polite">Even with the lid closed</p>
         </div>
-        <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Nuit Blanche, demo" disabled data-power></button>
+        <button class="switch" type="button" role="switch" aria-checked="true" aria-label="Always awake, demo" disabled data-power></button>
       </div>
       <ul class="rows">
-        <li><span>Even with the lid closed</span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>on</span></li>
-        <li><span>Forced hotspot<small>My iPhone · connected</small></span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>on</span></li>
-        <li><span>Battery safety</span><span class="val">Stops below 20%</span></li>
-        <li><span>Duration</span><span class="val">Until 8 AM tomorrow</span></li>
+        <li><span>Personal Hotspot<small>My iPhone · connected</small></span><span class="switch switch--sm" data-on="true" aria-hidden="true"></span><span class="sr-only" data-mini-label>activé</span></li>
+        <li><span>Battery safety</span><span class="val">Stops below 10%</span></li>
+        <li><span>Duration</span><span class="val">Until I stop it</span></li>
       </ul>
     </div>
 
@@ -163,13 +161,13 @@ try {
     <article class="feat">
       <p class="note" aria-hidden="true">always online</p>
       <h3>Your iPhone becomes its connection.</h3>
-      <p>Pick your iPhone once. Whenever its hotspot is in range, your Mac rejoins it on its own and stays on it. On the train, at the café, at the bottom of the garden: it never drops off.</p>
+      <p>Turn on Personal Hotspot on your iPhone and pick it once in Nuit Blanche. Whenever it shows up, your Mac rejoins it on its own and stays on it. On the train, at the café, at the bottom of the garden: it never drops off.</p>
     </article>
 
     <article class="feat">
       <p class="note" aria-hidden="true">we’ve got you</p>
       <h3>It knows when to stop.</h3>
-      <p>When the battery drops below the level you picked, Nuit Blanche switches off and lets your Mac rest. You can also set a duration: it stops right on time.</p>
+      <p>Below 10% battery, Nuit Blanche switches off and lets your Mac rest. You can also pick a duration: 1 hour, 3 hours, or until you stop it.</p>
     </article>
 
     <article class="feat">
@@ -230,7 +228,7 @@ try {
       <details class="qa">
         <summary>Is it safe for my Mac?</summary>
         <div class="qa__body">
-          <p>Yes. Nuit Blanche does one thing: it tells your Mac not to sleep while it’s on. As soon as you switch it off, or quit the app, your Mac goes back to exactly its usual settings.</p>
+          <p>Yes. Nuit Blanche does one thing: it tells your Mac not to sleep while “Always awake” is on. As soon as you switch it off, or quit the app, your Mac gets its normal sleep back.</p>
           <p>The app is notarized by Apple: Apple checked it before you can open it.</p>
         </div>
       </details>
@@ -246,7 +244,7 @@ try {
       <details class="qa">
         <summary>Will it drain my battery?</summary>
         <div class="qa__body">
-          <p>An awake Mac uses more power than a sleeping one, that’s normal. That’s why Nuit Blanche watches the battery: below the level you choose, it stops and lets your Mac sleep. Plugged in, there’s nothing to worry about.</p>
+          <p>An awake Mac uses more power than a sleeping one, that’s normal. That’s why Nuit Blanche watches the battery: below 10%, it stops on its own and lets your Mac sleep. Plugged in, there’s nothing to worry about.</p>
         </div>
       </details>
 
@@ -260,15 +258,15 @@ try {
       <details class="qa">
         <summary>Why does it ask for permission the first time?</summary>
         <div class="qa__body">
-          <p>Keeping a closed Mac awake changes a system setting, so macOS asks for your password once to allow Nuit Blanche to do it. Your password stays with Apple: the app never sees it.</p>
-          <p>To recognize your iPhone’s network, macOS may also ask for Location access: that’s its rule for reading a Wi‑Fi network’s name. Nuit Blanche uses it for nothing else.</p>
+          <p>To keep your Mac awake with the lid closed, Nuit Blanche relies on a small helper that runs in the background. macOS asks you to allow it once, in System Settings, under General. After that, nothing more to do.</p>
+          <p>If you use Personal Hotspot, macOS will also ask for Location access: that’s its rule for seeing Wi‑Fi network names. Nuit Blanche uses it for nothing else.</p>
         </div>
       </details>
 
       <details class="qa">
         <summary>Which version of macOS do I need?</summary>
         <div class="qa__body">
-          <p>macOS 14 (Sonoma) or later, on Apple Silicon and Intel Macs.</p>
+          <p>macOS 14 (Sonoma) or later.</p>
         </div>
       </details>
 
