@@ -93,6 +93,107 @@
     }).catch(function () { clearTimeout(timer); });
   }
 
+  /* — mouvement : seulement à l'écran, et jamais si la personne l'a réduit — */
+
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var hasIO = 'IntersectionObserver' in window;
+
+  /* scènes animées : elles ne tournent que visibles (batterie et processeur épargnés) */
+  var lives = document.querySelectorAll('.stage, .vig');
+  if (hasIO && lives.length) {
+    var liveIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { en.target.classList.toggle('is-live', en.isIntersecting); });
+    }, { threshold: 0.12 });
+    Array.prototype.forEach.call(lives, function (n) { liveIO.observe(n); });
+  }
+
+  /* apparitions au défilement : posées uniquement sous la ligne de flottaison,
+     pour ne jamais faire clignoter ce qui est déjà à l'écran */
+  if (hasIO && !still.matches) {
+    var groups = [
+      '.section > .kicker', '.section > .h2', '.section > .intro',
+      '.feats > .feat', '.jobs > div', '.jobs__list > li', '.faq > div', '.wt', '.end'
+    ];
+    var revealIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('is-in');
+        revealIO.unobserve(en.target);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    var fold = window.innerHeight * 0.92;
+    groups.forEach(function (sel) {
+      Array.prototype.forEach.call(document.querySelectorAll(sel), function (el, i) {
+        if (el.getBoundingClientRect().top < fold) return;
+        el.classList.add('reveal');
+        el.style.setProperty('--rd', (Math.min(i, 5) * 0.07).toFixed(2) + 's');
+        revealIO.observe(el);
+      });
+    });
+  }
+
+  /* — installation pas à pas — */
+
+  var wt = document.querySelector('.wt');
+  if (wt) {
+    var stepBtns = wt.querySelectorAll('[data-go]');
+    var total = stepBtns.length;
+    var DUR = 6200;
+    var current = 1;
+    var timer = 0;
+    var inView = false;
+    var auto = !still.matches;
+
+    wt.style.setProperty('--wt-dur', DUR + 'ms');
+    wt.classList.toggle('is-auto', auto);
+
+    var play = function () {
+      wt.classList.remove('is-playing');
+      void wt.offsetWidth;                       /* relance les animations de la scène */
+      if (inView && !document.hidden) wt.classList.add('is-playing');
+      clearTimeout(timer);
+      if (auto && inView && !document.hidden) {
+        timer = setTimeout(function () { go(current % total + 1); }, DUR + 700);
+      }
+    };
+
+    var go = function (n) {
+      current = n;
+      wt.setAttribute('data-step', String(n));
+      Array.prototype.forEach.call(stepBtns, function (b) {
+        if (Number(b.getAttribute('data-go')) === n) b.setAttribute('aria-current', 'step');
+        else b.removeAttribute('aria-current');
+      });
+      play();
+    };
+
+    Array.prototype.forEach.call(stepBtns, function (b) {
+      b.addEventListener('click', function () {
+        auto = false;                            /* la personne prend la main : on ne l'interrompt plus */
+        wt.classList.remove('is-auto');
+        go(Number(b.getAttribute('data-go')));
+      });
+    });
+
+    if (hasIO) {
+      new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        if (inView) play();
+        else { clearTimeout(timer); wt.classList.remove('is-playing'); }
+      }, { threshold: 0.35 }).observe(wt);
+    }
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) { clearTimeout(timer); wt.classList.remove('is-playing'); }
+      else if (inView) play();
+    });
+    still.addEventListener && still.addEventListener('change', function () {
+      auto = !still.matches && wt.classList.contains('is-auto');
+      play();
+    });
+
+    go(1);
+  }
+
   /* — la capsule s'efface quand un grand bouton est déjà à l'écran — */
 
   var capsule = document.querySelector('.capsule');

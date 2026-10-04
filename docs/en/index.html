@@ -108,10 +108,27 @@ try {
 
   <!-- maquette de l'app sur un ciel étoilé peint -->
   <div class="stage" id="demo">
-    <picture class="stage__sky">
-      <source type="image/avif" srcset="../assets/sky-800.avif 800w, ../assets/sky-1536.avif 1536w" sizes="(max-width: 1260px) 100vw, 1200px">
-      <img src="../assets/sky-1536.jpg" srcset="../assets/sky-800.jpg 800w, ../assets/sky-1536.jpg 1536w" sizes="(max-width: 1260px) 100vw, 1200px" width="1536" height="1024" alt="A painted night sky with swirling stars over a sleeping village." fetchpriority="high" decoding="async">
-    </picture>
+    <div class="sky">
+      <div class="sky__drift">
+        <picture>
+          <source type="image/avif" srcset="../assets/sky-800.avif 800w, ../assets/sky-1536.avif 1536w" sizes="(max-width: 1260px) 100vw, 1200px">
+          <img src="../assets/sky-1536.jpg" srcset="../assets/sky-800.jpg 800w, ../assets/sky-1536.jpg 1536w" sizes="(max-width: 1260px) 100vw, 1200px" width="1536" height="1024" alt="A painted night sky with swirling stars over a sleeping village." fetchpriority="high" decoding="async">
+        </picture>
+        <span class="tw" style="--x:19.5%;--y:17.6%;--d:-0.0s;--s:1.0"></span>
+        <span class="tw" style="--x:10.1%;--y:31.3%;--d:-1.7s;--s:1.25"></span>
+        <span class="tw" style="--x:41.1%;--y:8%;--d:-3.4s;--s:1.5"></span>
+        <span class="tw" style="--x:63.2%;--y:6.3%;--d:-5.1s;--s:1.0"></span>
+        <span class="tw" style="--x:74.4%;--y:11.5%;--d:-0.5s;--s:1.25"></span>
+        <span class="tw" style="--x:54.9%;--y:17.3%;--d:-2.2s;--s:1.5"></span>
+        <span class="tw" style="--x:80.6%;--y:26.9%;--d:-3.9s;--s:1.0"></span>
+        <span class="tw" style="--x:93.8%;--y:43.2%;--d:-5.6s;--s:1.25"></span>
+        <span class="tw" style="--x:30.9%;--y:24.2%;--d:-1.0s;--s:1.5"></span>
+        <span class="tw" style="--x:72.1%;--y:37.4%;--d:-2.7s;--s:1.0"></span>
+        <span class="tw" style="--x:16.8%;--y:38.9%;--d:-4.4s;--s:1.25"></span>
+        <span class="tw" style="--x:2.6%;--y:7%;--d:-6.1s;--s:1.5"></span>
+        <span class="sky__moon"></span>
+      </div>
+    </div>
 
     <div class="menubar" aria-hidden="true">
       <span class="menubar__item menubar__moon">
@@ -164,24 +181,58 @@ try {
 
   <div class="feats">
     <article class="feat">
+      <div class="vig vig--lid" aria-hidden="true">
+        <div class="mac">
+          <div class="mac__lid">
+            <div class="mac__screen"><span class="mac__task">Claude is working…</span><span class="bar"><i></i></span></div>
+            <div class="mac__back"><span></span></div>
+          </div>
+          <div class="mac__base"></div>
+          <div class="mac__glow"></div>
+        </div>
+        <p class="chip vig__chip"><span class="chip__dot"></span>Lid closed, still going</p>
+      </div>
       <p class="note" aria-hidden="true">even lid closed!</p>
       <h3>Your Mac stays awake, open or closed.</h3>
       <p>A MacBook normally falls asleep the moment you close it. With Nuit Blanche on, it keeps working, whether you leave it on the desk or take it with you, lid closed.</p>
     </article>
 
     <article class="feat">
+      <div class="vig vig--hs" aria-hidden="true">
+        <svg class="hs" viewBox="0 0 320 180">
+          <g class="hs__mac"><rect x="38" y="70" width="104" height="66" rx="7"/><path d="M24 146h132"/></g>
+          <g class="hs__wifi"><path class="w3" d="M66 52a34 34 0 0 1 48 0"/><path class="w2" d="M74 60a22 22 0 0 1 32 0"/><path class="w1" d="M82 68a10 10 0 0 1 16 0"/></g>
+          <path class="hs__link" pathLength="1" d="M150 104C190 76 214 76 236 98"/>
+          <g class="hs__phone"><rect x="238" y="54" width="52" height="96" rx="11"/><path d="M256 62h16"/><g class="hs__link-ico" transform="rotate(-45 264 102)"><rect x="249" y="96" width="18" height="12" rx="6"/><rect x="261" y="96" width="18" height="12" rx="6"/></g></g>
+        </svg>
+        <p class="chip vig__chip"><span class="chip__dot"></span>Connected to My iPhone</p>
+      </div>
       <p class="note" aria-hidden="true">always online</p>
       <h3>Your iPhone becomes its connection.</h3>
       <p>Turn on Personal Hotspot on your iPhone and pick it once in Nuit Blanche. Whenever it shows up, your Mac joins it on its own. By default, only when there’s no other way online, to spare your data plan. On the train, at the café, at the bottom of the garden: it never drops off.</p>
     </article>
 
     <article class="feat">
+      <div class="vig vig--bat" aria-hidden="true">
+        <div class="bat"><div class="bat__body"><i class="bat__fill"></i></div><span class="bat__tip"></span><span class="bat__pct"></span></div>
+        <p class="chip vig__chip"><span class="chip__moon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z" fill="currentColor"/><ellipse class="eye" cx="15.6" cy="8.6" rx="2.3" ry="2.3" fill="var(--eye-bg, #0b1230)"/></svg></span>Below 10%: Nuit Blanche stops</p>
+      </div>
       <p class="note" aria-hidden="true">we’ve got you</p>
       <h3>It knows when to stop.</h3>
       <p>On battery, below 10%, Nuit Blanche stops, lets you know and lets your Mac rest. Plugged in, it never stops. You can also pick a duration: 1 hour, 3 hours, or until you stop it.</p>
     </article>
 
     <article class="feat">
+      <div class="vig vig--menu" aria-hidden="true">
+        <div class="mbar"><span class="mbar__moon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z" fill="currentColor"/><ellipse class="eye" cx="15.6" cy="8.6" rx="2.3" ry="2.3" fill="var(--eye-bg, #0b1230)"/></svg></span><span class="mbar__i">5G</span><span class="mbar__i">03:12</span></div>
+        <div class="mmenu">
+          <p class="mmenu__row mmenu__row--on"><span class="mmenu__check">✓</span>Always awake<kbd>⌘⇧N</kbd></p>
+          <p class="mmenu__row mmenu__row--muted">1 h · 3 h · Until I stop it</p>
+          <p class="mmenu__sep"></p>
+          <p class="mmenu__row">Quit (normal sleep returns)</p>
+        </div>
+        <svg class="cur" viewBox="0 0 24 24" width="24" height="24"><path d="M5 3l14 8.2-6.3 1.4 3.6 6.6-2.6 1.4-3.6-6.6L5 18.6V3Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
       <p class="note" aria-hidden="true">one click, up there</p>
       <h3>Always within reach, in the menu bar.</h3>
       <p>A little moon with an eye at the top of your screen: open when your Mac is staying up, closed when it sleeps as usual. One click on, one click off, or the <kbd>⌘⇧N</kbd> shortcut.</p>
@@ -227,26 +278,76 @@ try {
   </div>
 </section>
 
-<!-- ————————————————————————————— premier lancement -->
-<section class="wrap section" aria-labelledby="premier-titre">
-  <div class="first">
-    <div>
-      <p class="kicker">First launch</p>
-      <h2 class="h2" id="premier-titre">One step, and you’re set.</h2>
-      <p class="intro">The first time, macOS wants your OK so Nuit Blanche can keep your Mac awake with the lid closed. The app walks you through it, and it only happens once.</p>
-      <ol class="steps">
-        <li>Open Nuit Blanche and turn on <b>Always awake</b>.</li>
-        <li>Click <b>Open Settings</b>, then turn on Nuit Blanche under <b>Allow in the Background</b>.</li>
-        <li>Close the lid. That’s it: the little moon keeps its eye open.</li>
-      </ol>
+<!-- ————————————————————————————— installation -->
+<section class="wrap section" id="installer" aria-labelledby="installer-titre">
+  <p class="kicker">Install Nuit Blanche</p>
+  <h2 class="h2" id="installer-titre">One minute, five moves.</h2>
+  <p class="intro">No tech skills needed: follow the steps, the animation shows you where to click.</p>
+  <div class="wt" data-step="5">
+    <ol class="wt__steps">
+        <li><button type="button" class="wt__step" data-go="1" aria-controls="wt-screen"><span class="wt__num">1</span><span class="wt__txt"><b>Download</b><span>Click “Download for Mac”. The NuitBlanche.dmg file lands in your Downloads.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
+        <li><button type="button" class="wt__step" data-go="2" aria-controls="wt-screen"><span class="wt__num">2</span><span class="wt__txt"><b>Open it</b><span>Double-click NuitBlanche.dmg. A small window opens.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
+        <li><button type="button" class="wt__step" data-go="3" aria-controls="wt-screen"><span class="wt__num">3</span><span class="wt__txt"><b>Drag to Applications</b><span>Drag the Nuit Blanche icon onto the Applications folder. It’s installed.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
+        <li><button type="button" class="wt__step" data-go="4" aria-controls="wt-screen"><span class="wt__num">4</span><span class="wt__txt"><b>Allow it, just once</b><span>Open the app from Applications. macOS asks you to confirm, then Nuit Blanche takes you to the right setting: one switch to turn on.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
+        <li><button type="button" class="wt__step" data-go="5" aria-controls="wt-screen"><span class="wt__num">5</span><span class="wt__txt"><b>Switch it on</b><span>Turn on “Always awake”. The little moon opens its eye: your Mac no longer sleeps.</span></span><span class="wt__prog" aria-hidden="true"><i></i></span></button></li>
+    </ol>
+    <div class="wt__screen" id="wt-screen" aria-hidden="true">
+      <picture class="wt__wall"><source type="image/avif" srcset="../assets/banner.avif"><img src="../assets/banner.jpg" alt="" width="880" height="373" loading="lazy" decoding="async"></picture>
+      <div class="wt__mbar"><span class="wt__mbar-moon"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a6.7 6.7 0 0 0 11 11Z" fill="currentColor"/><ellipse class="eye" cx="15.6" cy="8.6" rx="2.3" ry="2.3" fill="var(--eye-bg, #0b1230)"/></svg></span><span>5G</span><span>03:12</span></div>
+
+      <div class="scene scene--1" data-scene="1">
+        <div class="win win--browser">
+          <div class="win__bar"><i></i><i></i><i></i><span class="win__url">connected-mate.github.io/nuit-blanche</span></div>
+          <div class="win__body"><p class="s1__h">Your Mac stays up.</p><span class="s1__btn">Download for Mac</span></div>
+        </div>
+        <div class="dlchip"><span class="dlchip__ico">⬇</span><span class="dlchip__txt">NuitBlanche.dmg<small>6.4 MB</small></span><span class="bar"><i></i></span></div>
+        <svg class="cur" viewBox="0 0 24 24" width="24" height="24"><path d="M5 3l14 8.2-6.3 1.4 3.6 6.6-2.6 1.4-3.6-6.6L5 18.6V3Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div class="scene scene--2" data-scene="2">
+        <div class="win win--finder">
+          <div class="win__bar"><i></i><i></i><i></i><span class="win__title">Downloads</span></div>
+          <div class="win__body"><p class="frow"><span class="frow__ico"></span>NuitBlanche.dmg<small>6.4 MB</small></p></div>
+        </div>
+        <div class="win win--dmg win--pop">
+          <div class="win__bar"><i></i><i></i><i></i><span class="win__title">Nuit Blanche</span></div>
+          <div class="win__body dmg"><img src="../assets/icon-192.png" alt="" width="96" height="96" loading="lazy"><span class="dmg__arrow"></span><span class="folder"><span>Applications</span></span></div>
+        </div>
+        <svg class="cur" viewBox="0 0 24 24" width="24" height="24"><path d="M5 3l14 8.2-6.3 1.4 3.6 6.6-2.6 1.4-3.6-6.6L5 18.6V3Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div class="scene scene--3" data-scene="3">
+        <div class="win win--dmg">
+          <div class="win__bar"><i></i><i></i><i></i><span class="win__title">Nuit Blanche</span></div>
+          <div class="win__body dmg"><img class="dmg__app" src="../assets/icon-192.png" alt="" width="96" height="96" loading="lazy"><span class="dmg__arrow"></span><span class="folder"><span>Applications</span></span></div>
+        </div>
+        <p class="chip s3__chip"><span class="chip__dot"></span>Installed in Applications</p>
+        <svg class="cur" viewBox="0 0 24 24" width="24" height="24"><path d="M5 3l14 8.2-6.3 1.4 3.6 6.6-2.6 1.4-3.6-6.6L5 18.6V3Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div class="scene scene--4" data-scene="4">
+        <div class="dialog">
+          <img src="../assets/icon-64.png" alt="" width="40" height="40" loading="lazy">
+          <p>“Nuit Blanche” is an app downloaded from the Internet. Are you sure you want to open it?</p>
+          <span class="dialog__btns"><span class="ui-btn">Cancel</span><span class="ui-btn ui-btn--default">Open</span></span>
+        </div>
+        <div class="guide"><p>One step: allow Nuit Blanche in the background.</p><span class="ui-btn ui-btn--outline">Open Settings</span></div>
+        <div class="win win--settings">
+          <div class="win__bar"><i></i><i></i><i></i><span class="win__title">System Settings</span></div>
+          <div class="win__body"><p class="set__label">Allow in the Background</p><p class="set__row"><img src="../assets/icon-64.png" alt="" width="22" height="22" loading="lazy">Nuit Blanche<span class="mini-sw"></span></p></div>
+        </div>
+        <svg class="cur" viewBox="0 0 24 24" width="24" height="24"><path d="M5 3l14 8.2-6.3 1.4 3.6 6.6-2.6 1.4-3.6-6.6L5 18.6V3Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div class="scene scene--5" data-scene="5">
+        <div class="win win--app">
+          <div class="win__bar"><i></i><i></i><i></i></div>
+          <div class="win__body"><div class="app5"><div><p class="app5__t">Always awake</p><p class="app5__s">Even with the lid closed.</p></div><span class="mini-sw mini-sw--lg"></span></div><p class="app5__pill"><span class="chip__dot"></span>Awake</p></div>
+        </div>
+        <span class="spark sp1"></span><span class="spark sp2"></span><span class="spark sp3"></span><span class="spark sp4"></span>
+        <svg class="cur" viewBox="0 0 24 24" width="24" height="24"><path d="M5 3l14 8.2-6.3 1.4 3.6 6.6-2.6 1.4-3.6-6.6L5 18.6V3Z" fill="#fff" stroke="#000" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
     </div>
-    <figure class="first__shot">
-      <p class="note" aria-hidden="true">the real app!</p>
-      <picture>
-        <source type="image/avif" srcset="../assets/shot-main-light-en-setup.avif">
-        <img src="../assets/shot-main-light-en-setup.png" width="920" height="1418" alt="The Nuit Blanche window on first launch: the “Always awake” switch on, the duration choice of 1 h, 3 h or until I stop it, a note asking to allow Nuit Blanche in the background with an “Open Settings” button, and the “Personal Hotspot” card." loading="lazy" decoding="async">
-      </picture>
-    </figure>
   </div>
 </section>
 
