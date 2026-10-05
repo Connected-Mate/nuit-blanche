@@ -654,26 +654,45 @@ html.is-still *, html.is-still *::before, html.is-still *::after { animation-pla
 
 /* 4. barre des menus */
 .mbar {
-  position: absolute; inset: 0 0 auto; height: 8.5cqw;
+  position: absolute; inset: 0 0 auto; height: 8cqw;
   display: flex; align-items: center; justify-content: flex-end; gap: 3.2cqw; padding-right: 4cqw;
   background: #1b2a5c; color: #eef1fa;
   font-size: 3.2cqw; font-weight: 500;
 }
 .mbar__moon { display: inline-grid; place-items: center; width: 6.4cqw; height: 5.6cqw; border-radius: 1.2cqw; background: rgb(255 255 255 / .2); color: #fff; }
 .mbar__moon svg { width: 3.8cqw; height: 3.8cqw; }
-.mmenu {
-  position: absolute; top: 10.5cqw; right: 15cqw; width: 64cqw;
-  padding: 1.4cqw; border-radius: 2.6cqw;
-  background: var(--card); box-shadow: var(--shadow-sm), 0 0 0 1px var(--line);
-  transform-origin: 85% 0; text-align: left;
-}
-.mmenu__row { display: flex; align-items: center; gap: 1.6cqw; padding: 1.3cqw 1.8cqw; border-radius: 1.4cqw; font-size: 3.4cqw; color: var(--body); white-space: nowrap; }
-.mmenu__row--on { background: var(--canvas); font-weight: 500; color: var(--ink); }
-.mmenu__check { width: 3.8cqw; color: var(--note-sm); font-weight: 600; }
-.mmenu__row kbd { margin-left: auto; font-size: 2.6cqw; }
-.mmenu__sep { height: 1px; margin: .8cqw 1.8cqw; background: var(--hair); }
 .cur { position: absolute; left: 0; top: 0; width: 4.6cqw; height: auto; z-index: 3; filter: drop-shadow(0 1px 2px rgb(0 0 0 / .3)); }
-.vig--menu .cur { transform: translate(72.5cqw, 3.2cqw); }
+.vig--menu .cur { transform: translate(80cqw, 24cqw); }
+.mpanel {
+  position: absolute; top: 10cqw; right: 12cqw; width: 64cqw; overflow: hidden;
+  border-radius: 3cqw; background: #1c1d20; color: #f2f3f6; text-align: left;
+  box-shadow: 0 2cqw 5cqw rgb(0 0 0 / .35), 0 0 0 1px rgb(255 255 255 / .08);
+  transform-origin: 85% 0;
+}
+.mpanel__head {
+  display: flex; align-items: center; gap: 2cqw; height: 9.5cqw; padding: 0 3.4cqw;
+  background: url("assets/banner.jpg") 50% 30% / cover, #23366f;
+}
+.mpanel__title { font-size: 3.6cqw; font-weight: 600; letter-spacing: -.02em; }
+.mpanel__chip { display: inline-grid; grid-template-columns: auto auto; align-items: center; column-gap: 1cqw; padding: .6cqw 1.8cqw .6cqw 1.4cqw; border-radius: 10cqw; background: #fff; color: #1c1d1f; font-size: 2.5cqw; }
+.mpanel__chip i { width: 1.4cqw; height: 1.4cqw; border-radius: 50%; background: var(--green); }
+.mpanel__chip b { grid-area: 1 / 2; font-weight: 600; }
+.mpanel__row {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2.2cqw;
+  margin: 1.6cqw 2cqw 0; padding: 1.6cqw 2.2cqw; border-radius: 2.4cqw;
+  background: #26272b; box-shadow: inset 0 0 0 .3cqw rgb(52 199 89 / .7);
+}
+.mpanel__ico { display: grid; place-items: center; width: 5.6cqw; height: 5.6cqw; border-radius: 50%; background: #20352a; color: var(--green); }
+.mpanel__ico svg { width: 3cqw; height: 3cqw; }
+.mpanel__txt { display: grid; }
+.mpanel__txt b { font-size: 3.1cqw; font-weight: 600; }
+.mpanel__txt small { display: grid; font-size: 2.5cqw; color: #a9adb6; }
+.mpanel__txt small > span { grid-area: 1 / 1; }
+.mpanel__sw { position: relative; width: 7.2cqw; height: 4.2cqw; border-radius: 10cqw; background: var(--green); }
+.mpanel__sw::after { content: ""; position: absolute; top: .45cqw; left: .45cqw; width: 3.3cqw; height: 3.3cqw; border-radius: 50%; background: #fff; transform: translateX(3cqw); }
+.mpanel__foot { display: flex; justify-content: space-between; margin-top: 1.6cqw; padding: 2cqw 3.4cqw; border-top: 1px solid rgb(255 255 255 / .08); font-size: 2.6cqw; font-weight: 500; }
+.mpanel__foot span + span { color: #a9adb6; }
+.mp-off { opacity: 0; }
 
 /* — les boucles, seulement à l'écran et si le mouvement est permis — */
 @media (prefers-reduced-motion: no-preference) {
@@ -685,10 +704,16 @@ html.is-still *, html.is-still *::before, html.is-still *::after { animation-pla
   .vig--bat.is-live .m-on { animation: bat-on 9s var(--ease-out-quint) infinite; }
   .vig--bat.is-live .m-off { animation: bat-off 9s var(--ease-out-quint) infinite; }
 
-  .vig--menu.is-live .cur { animation: mb-cur 7s var(--ease-in-out) infinite; }
-  .vig--menu.is-live .mmenu { animation: mb-menu 7s var(--ease-out-expo) infinite; }
-  .vig--menu.is-live .m-on { animation: mb-on 7s var(--ease-out-quint) infinite; }
-  .vig--menu.is-live .m-off { animation: mb-off 7s var(--ease-out-quint) infinite; }
+  .vig--menu.is-live .cur { animation: mb-cur 8s var(--ease-in-out) infinite; }
+  .vig--menu.is-live .mpanel { animation: mp-panel 8s var(--ease-out-expo) infinite; }
+  .vig--menu.is-live .mpanel__row--aw { animation: mp-row 8s ease-out infinite; }
+  .vig--menu.is-live .mpanel__row--aw .mpanel__sw { animation: mp-sw 8s ease-out infinite; }
+  .vig--menu.is-live .mpanel__row--aw .mpanel__sw::after { animation: mp-knob 8s var(--ease-out-quint) infinite; }
+  .vig--menu.is-live .mpanel .mp-on { animation: mp-on 8s ease-out infinite; }
+  .vig--menu.is-live .mpanel .mp-off { animation: mp-off 8s ease-out infinite; }
+  .vig--menu.is-live .mpanel__chip i { animation: mp-dot 8s ease-out infinite; }
+  .vig--menu.is-live .mbar .m-on { animation: mb-on 8s var(--ease-out-quint) infinite; }
+  .vig--menu.is-live .mbar .m-off { animation: mb-off 8s var(--ease-out-quint) infinite; }
 }
 
 @keyframes bat-fill { 0% { transform: scaleX(.48); } 58%, 94% { transform: scaleX(.1); } 100% { transform: scaleX(.48); } }
@@ -701,19 +726,24 @@ html.is-still *, html.is-still *::before, html.is-still *::after { animation-pla
 @keyframes bat-on { 0%, 62% { opacity: 1; } 68%, 94% { opacity: 0; } 100% { opacity: 1; } }
 @keyframes bat-off { 0%, 62% { opacity: 0; } 68%, 94% { opacity: 1; } 100% { opacity: 0; } }
 @keyframes mb-cur {
-  0% { transform: translate(34cqw, 40cqw); }
-  32% { transform: translate(72.5cqw, 3.2cqw); }
-  35% { transform: translate(72.5cqw, 3.2cqw) scale(.84); }
-  38%, 86% { transform: translate(72.5cqw, 3.2cqw); }
-  100% { transform: translate(34cqw, 40cqw); }
+  0% { transform: translate(30cqw, 44cqw); }
+  24% { transform: translate(72.5cqw, 3.2cqw); }
+  27% { transform: translate(72.5cqw, 3.2cqw) scale(.84); }
+  30% { transform: translate(72.5cqw, 3.2cqw); }
+  44% { transform: translate(78cqw, 22cqw); }
+  47% { transform: translate(78cqw, 22cqw) scale(.84); }
+  50%, 90% { transform: translate(78cqw, 22cqw); }
+  100% { transform: translate(30cqw, 44cqw); }
 }
-@keyframes mb-menu {
-  0%, 36% { opacity: 0; transform: translateY(-1.5cqw) scale(.96); }
-  42%, 84% { opacity: 1; transform: none; }
-  90%, 100% { opacity: 0; transform: none; }
-}
-@keyframes mb-on { 0%, 36% { opacity: 0; } 42%, 86% { opacity: 1; } 92%, 100% { opacity: 0; } }
-@keyframes mb-off { 0%, 36% { opacity: 1; } 42%, 86% { opacity: 0; } 92%, 100% { opacity: 1; } }
+@keyframes mp-panel { 0%, 27% { opacity: 0; transform: translateY(-1.5cqw) scale(.96); } 33%, 88% { opacity: 1; transform: none; } 94%, 100% { opacity: 0; transform: none; } }
+@keyframes mp-row { 0%, 47% { box-shadow: inset 0 0 0 .3cqw rgb(52 199 89 / 0); } 52%, 100% { box-shadow: inset 0 0 0 .3cqw rgb(52 199 89 / .7); } }
+@keyframes mp-sw { 0%, 47% { background: #4a4c52; } 50%, 100% { background: var(--green); } }
+@keyframes mp-knob { 0%, 47% { transform: none; } 54%, 100% { transform: translateX(3cqw); } }
+@keyframes mp-on { 0%, 48% { opacity: 0; } 53%, 100% { opacity: 1; } }
+@keyframes mp-off { 0%, 48% { opacity: 1; } 53%, 100% { opacity: 0; } }
+@keyframes mp-dot { 0%, 48% { background: #8a8d94; } 53%, 100% { background: var(--green); } }
+@keyframes mb-on { 0%, 48% { opacity: 0; } 53%, 92% { opacity: 1; } 98%, 100% { opacity: 0; } }
+@keyframes mb-off { 0%, 48% { opacity: 1; } 53%, 92% { opacity: 0; } 98%, 100% { opacity: 1; } }
 
 /* ═════════════════════════════════════════════ installation pas à pas */
 
