@@ -674,9 +674,11 @@ html.is-still *, html.is-still *::before, html.is-still *::after { animation-pla
   background: url("assets/banner.jpg") 50% 30% / cover, #23366f;
 }
 .mpanel__title { font-size: 3.6cqw; font-weight: 600; letter-spacing: -.02em; }
-.mpanel__chip { display: inline-grid; grid-template-columns: auto auto; align-items: center; column-gap: 1cqw; padding: .6cqw 1.8cqw .6cqw 1.4cqw; border-radius: 10cqw; background: #fff; color: #1c1d1f; font-size: 2.5cqw; }
+.mpanel__chip { display: inline-flex; align-items: center; gap: 1cqw; padding: .6cqw 1.8cqw .6cqw 1.4cqw; border-radius: 10cqw; background: #fff; color: #1c1d1f; font-size: 2.5cqw; }
 .mpanel__chip i { width: 1.4cqw; height: 1.4cqw; border-radius: 50%; background: var(--green); }
-.mpanel__chip b { grid-area: 1 / 2; font-weight: 600; }
+.mpanel__chip b { display: inline-block; overflow: hidden; white-space: nowrap; max-width: 24cqw; font-weight: 600; }
+.mpanel__chip b.mp-off { max-width: 0; }
+.mpanel__chip i { flex: none; }
 .mpanel__row {
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2.2cqw;
   margin: 1.6cqw 2cqw 0; padding: 1.6cqw 2.2cqw; border-radius: 2.4cqw;
@@ -712,6 +714,8 @@ html.is-still *, html.is-still *::before, html.is-still *::after { animation-pla
   .vig--menu.is-live .mpanel .mp-on { animation: mp-on 8s ease-out infinite; }
   .vig--menu.is-live .mpanel .mp-off { animation: mp-off 8s ease-out infinite; }
   .vig--menu.is-live .mpanel__chip i { animation: mp-dot 8s ease-out infinite; }
+  .vig--menu.is-live .mpanel__chip b.mp-on { animation: mp-on 8s ease-out infinite, mp-w-on 8s var(--ease-out-quint) infinite; }
+  .vig--menu.is-live .mpanel__chip b.mp-off { animation: mp-off 8s ease-out infinite, mp-w-off 8s var(--ease-out-quint) infinite; }
   .vig--menu.is-live .mbar .m-on { animation: mb-on 8s var(--ease-out-quint) infinite; }
   .vig--menu.is-live .mbar .m-off { animation: mb-off 8s var(--ease-out-quint) infinite; }
 }
@@ -741,6 +745,9 @@ html.is-still *, html.is-still *::before, html.is-still *::after { animation-pla
 @keyframes mp-knob { 0%, 47% { transform: none; } 54%, 100% { transform: translateX(3cqw); } }
 @keyframes mp-on { 0%, 48% { opacity: 0; } 53%, 100% { opacity: 1; } }
 @keyframes mp-off { 0%, 48% { opacity: 1; } 53%, 100% { opacity: 0; } }
+/* la pastille épouse son texte : seule exception au « transform/opacity », un élément minuscule */
+@keyframes mp-w-on { 0%, 48% { max-width: 0; } 54%, 100% { max-width: 24cqw; } }
+@keyframes mp-w-off { 0%, 48% { max-width: 24cqw; } 54%, 100% { max-width: 0; } }
 @keyframes mp-dot { 0%, 48% { background: #8a8d94; } 53%, 100% { background: var(--green); } }
 @keyframes mb-on { 0%, 48% { opacity: 0; } 53%, 92% { opacity: 1; } 98%, 100% { opacity: 0; } }
 @keyframes mb-off { 0%, 48% { opacity: 1; } 53%, 92% { opacity: 0; } 98%, 100% { opacity: 1; } }
