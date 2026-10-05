@@ -287,14 +287,28 @@
     go(1);
   }
 
-  /* — la vidéo n'apparaît que si elle est vraiment en ligne — */
+  /* — la vidéo démarre seule (muette) à l'écran, jamais si le mouvement est réduit ou en pause — */
 
-  var videoSec = document.getElementById('video');
-  var videoSrc = videoSec && videoSec.querySelector('source');
-  if (videoSrc && window.fetch) {
-    fetch(videoSrc.src, { method: 'HEAD' }).then(function (r) {
-      if (r.ok) videoSec.hidden = false;
-    }).catch(function () {});
+  var vid = document.querySelector('video[data-autoplay]');
+  if (vid && hasIO) {
+    var vidSeen = false, userPaused = false;
+    var vidSync = function () {
+      if (vidSeen && !paused && !still.matches && !userPaused) {
+        vid.preload = 'auto';
+        var p = vid.play();
+        if (p && p.catch) p.catch(function () {});
+      } else if (!vid.paused) {
+        vid.pause();
+      }
+    };
+    vid.addEventListener('pause', function () { if (vidSeen && !document.hidden && !paused) userPaused = true; });
+    vid.addEventListener('play', function () { userPaused = false; });
+    new IntersectionObserver(function (entries) {
+      vidSeen = entries[0].isIntersecting;
+      if (!vidSeen) userPaused = false;
+      vidSync();
+    }, { threshold: 0.5 }).observe(vid);
+    document.addEventListener('nb:motion', vidSync);
   }
 
   /* — la capsule s'efface quand un grand bouton est déjà à l'écran — */

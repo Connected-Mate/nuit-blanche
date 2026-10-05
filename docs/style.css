@@ -1242,3 +1242,6 @@ html.is-still *, html.is-still *::before, html.is-still *::after { animation-pla
 /* ═════════════════════════════════════════════ vidéo */
 .video__frame { margin-top: clamp(28px, 4vw, 40px); overflow: hidden; border-radius: var(--r-mock); background: #0d1530; aspect-ratio: 16 / 9; box-shadow: var(--shadow-sm), 0 0 0 1px var(--hair); }
 .video__frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.video__text { margin-top: 14px; max-width: 62ch; color: var(--muted); }
+.video__text summary { cursor: pointer; min-height: 44px; display: inline-flex; align-items: center; color: var(--body); font-weight: 500; }
+.video__text ol { margin: 4px 0 0; padding-left: 1.4em; display: grid; gap: 4px; }

@@ -175,16 +175,28 @@ try {
   </div>
 </section>
 
-<!-- ————————————————————————————— vidéo (s'affiche dès que le fichier existe) -->
-<section class="wrap section video" id="video" aria-labelledby="video-titre" hidden data-video="assets/video/promo-en.mp4">
-  <p class="kicker">In 30 seconds</p>
-  <h2 class="h2" id="video-titre">See Nuit Blanche in action.</h2>
+<!-- ————————————————————————————— vidéo -->
+<section class="wrap section video" id="video" aria-labelledby="video-titre">
+  <p class="kicker">On video</p>
+  <h2 class="h2" id="video-titre">One night with Nuit Blanche.</h2>
   <div class="video__frame">
-    <video controls playsinline preload="none" poster="../assets/video/poster-en.jpg" width="1920" height="1080">
+    <video muted loop playsinline controls preload="none" poster="../assets/video/poster-en.jpg" width="1280" height="720" aria-label="Nuit Blanche promo video, 38 seconds, no sound" aria-describedby="video-texte" data-autoplay>
+      <source src="../assets/video/promo-en.webm" type="video/webm">
       <source src="../assets/video/promo-en.mp4" type="video/mp4">
-      <track kind="captions" src="../assets/video/promo-en.vtt" srclang="en" label="English" default>
     </video>
   </div>
+  <details class="video__text" id="video-texte">
+    <summary>Read what the video shows</summary>
+    <ol>
+        <li>11:47 pm. Your Mac is still working… and you’re half asleep.</li>
+        <li>AI agents, downloads, renders… a task moves forward on screen.</li>
+        <li>You close the lid.</li>
+        <li>Your Mac sleeps only when you want it to: the render reaches 100% and the tests finish, even with the lid closed.</li>
+        <li>No Wi‑Fi? It joins your iPhone.</li>
+        <li>In the menu bar, the little moon opens its eye: one switch, “Always awake”.</li>
+        <li>Nuit Blanche. Your Mac stays up. You don’t have to. Free, for Mac.</li>
+    </ol>
+  </details>
 </section>
 
 <!-- ————————————————————————————— fonctions -->

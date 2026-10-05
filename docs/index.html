@@ -181,16 +181,28 @@ try {
   </div>
 </section>
 
-<!-- ————————————————————————————— vidéo (s'affiche dès que le fichier existe) -->
-<section class="wrap section video" id="video" aria-labelledby="video-titre" hidden data-video="assets/video/promo-fr.mp4">
-  <p class="kicker">En 30 secondes</p>
-  <h2 class="h2" id="video-titre">Voir Nuit Blanche en action.</h2>
+<!-- ————————————————————————————— vidéo -->
+<section class="wrap section video" id="video" aria-labelledby="video-titre">
+  <p class="kicker">En vidéo</p>
+  <h2 class="h2" id="video-titre">Une nuit avec Nuit Blanche.</h2>
   <div class="video__frame">
-    <video controls playsinline preload="none" poster="assets/video/poster-fr.jpg" width="1920" height="1080">
+    <video muted loop playsinline controls preload="none" poster="assets/video/poster-fr.jpg" width="1280" height="720" aria-label="Vidéo de présentation de Nuit Blanche, 38 secondes, sans son" aria-describedby="video-texte" data-autoplay>
+      <source src="assets/video/promo-fr.webm" type="video/webm">
       <source src="assets/video/promo-fr.mp4" type="video/mp4">
-      <track kind="captions" src="assets/video/promo-fr.vtt" srclang="fr" label="Français" default>
     </video>
   </div>
+  <details class="video__text" id="video-texte">
+    <summary>Lire ce que montre la vidéo</summary>
+    <ol>
+        <li>23 h 47. Ton Mac bosse encore… et toi, tu tombes de sommeil.</li>
+        <li>Agents IA, téléchargements, rendus… : une tâche avance à l'écran.</li>
+        <li>Tu fermes le capot.</li>
+        <li>Ton Mac ne dort que si tu le veux : le rendu atteint 100 % et les tests se terminent, même capot fermé.</li>
+        <li>Plus de Wi‑Fi ? Il rejoint ton iPhone.</li>
+        <li>Dans la barre des menus, la petite lune ouvre l'œil : un seul bouton, « Toujours éveillé ».</li>
+        <li>Nuit Blanche. Ton Mac ne dort plus. Toi, si. Gratuit, pour Mac.</li>
+    </ol>
+  </details>
 </section>
 
 <!-- ————————————————————————————— fonctions -->
