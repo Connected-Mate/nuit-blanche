@@ -558,6 +558,7 @@ html[lang="en"] { --sfx: "%"; }
 /* — entrée de la page — */
 @media (prefers-reduced-motion: no-preference) {
   .hero > * { animation: rise .7s var(--ease-out-quint) both; }
+  .hero > h1, .hero > .lede { animation-name: rise-still; }
   .hero > :nth-child(2) { animation-delay: .06s; }
   .hero > :nth-child(3) { animation-delay: .12s; }
   .hero > :nth-child(4) { animation-delay: .18s; }
@@ -581,6 +582,8 @@ html[lang="en"] { --sfx: "%"; }
 }
 
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+/* le titre reste visible dès la première image (LCP) : il glisse sans apparaître en fondu */
+@keyframes rise-still { from { transform: translateY(14px); } }
 @keyframes rise-stage { from { opacity: 0; transform: translateY(28px) scale(.985); } }
 @keyframes window-in { from { opacity: 0; transform: translate(-50%, calc(-50% + 26px)) scale(.97); } }
 @keyframes drift { from { transform: scale(1.015) translate(0, 0); } to { transform: scale(1.07) translate(-1.4%, .9%); } }
@@ -671,7 +674,8 @@ html.is-still *, html.is-still *::before, html.is-still *::after { animation-pla
 }
 .mpanel__head {
   display: flex; align-items: center; gap: 2cqw; height: 9.5cqw; padding: 0 3.4cqw;
-  background: url("assets/banner.jpg") 50% 30% / cover, #23366f;
+  background: #23366f url("assets/banner.jpg") 50% 30% / cover;
+  background-image: image-set("assets/banner.avif" type("image/avif"), "assets/banner.jpg" type("image/jpeg"));
 }
 .mpanel__title { font-size: 3.6cqw; font-weight: 600; letter-spacing: -.02em; }
 .mpanel__chip { display: inline-flex; align-items: center; gap: 1cqw; padding: .6cqw 1.8cqw .6cqw 1.4cqw; border-radius: 10cqw; background: #fff; color: #1c1d1f; font-size: 2.5cqw; }
