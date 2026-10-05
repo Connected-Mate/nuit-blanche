@@ -175,44 +175,112 @@ try {
   </div>
 </section>
 
+<!-- ————————————————————————————— vidéo (s'affiche dès que le fichier existe) -->
+<section class="wrap section video" id="video" aria-labelledby="video-titre" hidden data-video="assets/video/promo-en.mp4">
+  <p class="kicker">In 30 seconds</p>
+  <h2 class="h2" id="video-titre">See Nuit Blanche in action.</h2>
+  <div class="video__frame">
+    <video controls playsinline preload="none" poster="../assets/video/poster-en.jpg" width="1920" height="1080">
+      <source src="../assets/video/promo-en.mp4" type="video/mp4">
+      <track kind="captions" src="../assets/video/promo-en.vtt" srclang="en" label="English" default>
+    </video>
+  </div>
+</section>
+
 <!-- ————————————————————————————— fonctions -->
 <section class="wrap section" id="fonctions" aria-labelledby="fonctions-titre">
   <p class="kicker">What Nuit Blanche does</p>
   <h2 class="h2" id="fonctions-titre">Close the lid. Go to bed. Everything keeps going.</h2>
 
-  <div class="feats">
-    <article class="feat">
-      <div class="vig vig--lid" aria-hidden="true">
-        <div class="mac">
-          <div class="mac__lid">
-            <div class="mac__screen"><span class="mac__task">Claude is working…</span><span class="bar"><i></i></span></div>
-            <div class="mac__back"><span></span></div>
+  <div class="lid" data-lid>
+    <div class="lid__sticky">
+      <div class="lid__stage" role="img" aria-label="A MacBook closing its lid while its work carries on: a task list advances and a download keeps progressing.">
+        <picture class="lid__sky" aria-hidden="true"><source type="image/avif" srcset="../assets/sky-800.avif 800w, ../assets/sky-1536.avif 1536w" sizes="(max-width: 1260px) 100vw, 1200px"><img src="../assets/sky-1536.jpg" alt="" width="1536" height="1024" loading="lazy" decoding="async"></picture>
+        <div class="mbp" aria-hidden="true">
+          <div class="mbp__halo"></div>
+          <div class="mbp__shadow"></div>
+          <div class="mbp__rig">
+            <div class="mbp__base">
+              <div class="mbp__deck"><span class="mbp__keys"></span><span class="mbp__pad"></span></div>
+              <div class="mbp__front"></div>
+              <div class="mbp__leak"></div>
+            </div>
+            <div class="mbp__lid">
+              <div class="mbp__screen">
+                <span class="mbp__notch"></span>
+                <div class="mbp__display">
+                  <span class="mbp__menubar"><span class="mbp__dot"></span></span>
+                  <span class="mbp__win"><i></i><i></i><i></i><i></i><i></i></span>
+                  <span class="mbp__ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" pathLength="100"/><circle class="mbp__ring-on" cx="18" cy="18" r="15.5" pathLength="100"/></svg></span>
+                </div>
+              </div>
+              <div class="mbp__back"><span class="mbp__logo"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M10.64 3.52A8.5 8.5 0 1 0 17.78 15.42A7 7 0 0 1 10.64 3.52Z" fill="currentColor"/></svg></span></div>
+            </div>
           </div>
-          <div class="mac__base"></div>
-          <div class="mac__glow"></div>
         </div>
-        <p class="chip vig__chip"><span class="chip__dot"></span>Lid closed, still going</p>
+        <div class="term" aria-hidden="true">
+          <p class="term__head"><span>Meanwhile</span><span class="term__live"><i></i>running</span></p>
+          <ol class="term__lines">
+              <li style="--i:0">claude › reading the project (214 files)</li>
+              <li style="--i:1">claude › writing tests</li>
+              <li style="--i:2">claude › 42/42 tests passing ✓</li>
+              <li style="--i:3">↓ final-cut.mov</li>
+              <li style="--i:4">☁ iCloud · 1,284 photos uploaded</li>
+              <li style="--i:5">claude › opening the pull request ✓</li>
+          </ol>
+          <p class="term__dl"><span>final-cut.mov</span><span class="term__pct"></span></p>
+          <span class="term__bar"><i></i></span>
+        </div>
+        <p class="note lid__note lid__note--term" aria-hidden="true">still working!<svg viewBox="0 0 70 40" width="58" height="34" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8c18 4 34 14 52 26"/><path d="M44 33l12 1-3-12"/></svg></p>
+        <p class="note lid__note lid__note--moon" aria-hidden="true">the moon keeps watch</p>
+        <p class="lid__hint" aria-hidden="true">Scroll to close the lid</p>
       </div>
-      <p class="note" aria-hidden="true">even lid closed!</p>
-      <h3>Your Mac stays awake, open or closed.</h3>
-      <p>A MacBook normally falls asleep the moment you close it. With Nuit Blanche on, it keeps working, whether you leave it on the desk or take it with you, lid closed.</p>
-    </article>
+      <div class="lid__copy">
+        <h3>Lid closed, your Mac keeps going.</h3>
+        <p>Close the screen, tuck it under your arm: your agents, downloads and renders run to the end.</p>
+      </div>
+    </div>
+  </div>
 
-    <article class="feat">
-      <div class="vig vig--hs" aria-hidden="true">
-        <svg class="hs" viewBox="0 0 320 180">
-          <g class="hs__mac"><rect x="38" y="70" width="104" height="66" rx="7"/><path d="M24 146h132"/></g>
-          <g class="hs__wifi"><path class="w3" d="M66 52a34 34 0 0 1 48 0"/><path class="w2" d="M74 60a22 22 0 0 1 32 0"/><path class="w1" d="M82 68a10 10 0 0 1 16 0"/></g>
-          <path class="hs__link" pathLength="1" d="M150 104C190 76 214 76 236 98"/>
-          <g class="hs__phone"><rect x="238" y="54" width="52" height="96" rx="11"/><path d="M256 62h16"/><g class="hs__link-ico" transform="rotate(-45 264 102)"><rect x="249" y="96" width="18" height="12" rx="6"/><rect x="261" y="96" width="18" height="12" rx="6"/></g></g>
-        </svg>
-        <p class="chip vig__chip"><span class="chip__dot"></span>Connected to My iPhone</p>
-      </div>
+  <div class="hsx">
+    <div class="hsx__art" aria-hidden="true">
+      <svg class="hsx__svg" viewBox="0 0 600 300">
+        <defs>
+          <linearGradient id="alu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eceef1"/><stop offset="1" stop-color="#b9bdc4"/></linearGradient>
+          <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b2a5c"/><stop offset="1" stop-color="#0d1326"/></linearGradient>
+        </defs>
+        <g class="hsx__waves hsx__waves--mac"><circle cx="150" cy="128" r="40"/><circle cx="150" cy="128" r="40"/><circle cx="150" cy="128" r="40"/></g>
+        <g class="hsx__waves hsx__waves--phone"><circle cx="480" cy="150" r="30"/><circle cx="480" cy="150" r="30"/><circle cx="480" cy="150" r="30"/></g>
+        <path class="hsx__link" pathLength="100" d="M262 150C330 96 392 96 446 140"/>
+        <path class="hsx__flow" pathLength="100" d="M262 150C330 96 392 96 446 140"/>
+        <g class="hsx__mac">
+          <rect x="52" y="52" width="196" height="132" rx="10" fill="#1c1d1f"/>
+          <rect x="60" y="60" width="180" height="116" rx="4" fill="url(#scr)"/>
+          <path d="M30 186h240l-14 14H44z" fill="url(#alu)"/>
+          <rect x="128" y="186" width="44" height="4" rx="2" fill="#a3a8b0"/>
+          <g class="hsx__wifi" transform="translate(150 104)"><path d="M-22-6a31 31 0 0 1 44 0"/><path d="M-14 2a19 19 0 0 1 28 0"/><path d="M-6 10a7 7 0 0 1 12 0"/></g>
+          <text class="hsx__label hsx__label--search" x="150" y="152" text-anchor="middle">Searching…</text>
+          <text class="hsx__label hsx__label--ok" x="150" y="152" text-anchor="middle">My iPhone ✓</text>
+        </g>
+        <g class="hsx__phone">
+          <rect x="446" y="70" width="74" height="156" rx="16" fill="#1c1d1f"/>
+          <rect x="451" y="75" width="64" height="146" rx="12" fill="url(#scr)"/>
+          <rect x="469" y="80" width="28" height="8" rx="4" fill="#000"/>
+          <rect class="hsx__tile" x="457" y="128" width="52" height="46" rx="10"/>
+          <g transform="translate(483 146) rotate(-45)" class="hsx__chain"><rect x="-12" y="-4.5" width="13" height="9" rx="4.5"/><rect x="-1" y="-4.5" width="13" height="9" rx="4.5"/></g>
+          <text class="hsx__tile-t" x="483" y="166" text-anchor="middle">5G</text>
+        </g>
+      </svg>
+      <p class="chip hsx__chip"><span class="chip__dot"></span>Connected · My iPhone</p>
+    </div>
+    <div class="hsx__copy">
       <p class="note" aria-hidden="true">always online</p>
       <h3>Your iPhone becomes its connection.</h3>
-      <p>Turn on Personal Hotspot on your iPhone and pick it once in Nuit Blanche. Whenever it shows up, your Mac joins it on its own. By default, only when there’s no other way online, to spare your data plan. On the train, at the café, at the bottom of the garden: it never drops off.</p>
-    </article>
+      <p>Turn on Personal Hotspot once: whenever your iPhone shows up, your Mac joins it. By default, only when there’s no other internet.</p>
+    </div>
+  </div>
 
+  <div class="feats feats--pair">
     <article class="feat">
       <div class="vig vig--bat" aria-hidden="true">
         <div class="bat"><div class="bat__body"><i class="bat__fill"></i></div><span class="bat__tip"></span><span class="bat__pct"></span></div>
@@ -220,7 +288,7 @@ try {
       </div>
       <p class="note" aria-hidden="true">we’ve got you</p>
       <h3>It knows when to stop.</h3>
-      <p>On battery, below 10%, Nuit Blanche stops, lets you know and lets your Mac rest. Plugged in, it never stops. You can also pick a duration: 1 hour, 3 hours, or until you stop it.</p>
+      <p>On battery, below 10%, it stops and lets you know. Plugged in, never. Or pick 1 h, 3 h, or until you stop it.</p>
     </article>
 
     <article class="feat">
@@ -237,7 +305,7 @@ try {
       </div>
       <p class="note" aria-hidden="true">one click, up there</p>
       <h3>Always within reach, in the menu bar.</h3>
-      <p>A little moon with an eye at the top of your screen: open when your Mac is staying up, closed when it sleeps as usual. One click on, one click off, or the <kbd>⇧⌘N</kbd> shortcut.</p>
+      <p>A little moon: eye open, your Mac is staying up. One click, or <kbd>⇧⌘N</kbd>, to switch it on or off.</p>
     </article>
   </div>
 </section>
